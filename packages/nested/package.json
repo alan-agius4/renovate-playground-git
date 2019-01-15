@@ -9,6 +9,6 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"tslint": "5.0.0"
+		"tslint": "5.12.1"
 	}
 }
