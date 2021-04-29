@@ -2,9 +2,6 @@
   "separateMajorMinor": false,
   "pinVersions": false,
   "semanticCommits": true,
-  "semanticPrefix": "build",
-  "commitMessage": "{{semanticPrefix}} update {{#if groupName}}{{{groupName}}} packages{{else}}{{{depName}}} to version {{{newVersion}}}{{/if}}",
-  "prHourlyLimit": 2,
   "labels": [
     "target: minor",
     "action: merge"
@@ -16,20 +13,28 @@
     "@types/node"
   ],
   "packageFiles": [
-    "WORKSPACE",
-    "package.json",
-    "packages/**/package.json",
-    "tests/legacy-cli/e2e/ng-snapshot/package.json"
+    "package.json"
   ],
   "packageRules": [
     {
-      "packagePatterns": [
-        "^@bazel\/.*",
-        "^build_bazel.*",
-        "bazel_toolchains"
+      "excludePackagePatterns": [
+        "^@angular/.*",
+        "^@angular-devkit/.*",
+        "^@schematics/.*"
       ],
-      "groupName": "bazel",
-      "pinVersions": false
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchCurrentVersion": "!^0.",
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch",
+      "schedule": [
+        "after 1am on Thursday"
+      ]
     }
   ]
 }
