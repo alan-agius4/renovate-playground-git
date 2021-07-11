@@ -18,6 +18,7 @@
   "packageFiles": [
     "WORKSPACE",
     "package.json",
+    "latest.json",
     "packages/**/package.json",
     "tests/legacy-cli/e2e/ng-snapshot/package.json"
   ],
