@@ -2,18 +2,8 @@
   "separateMajorMinor": false,
   "pinVersions": false,
   "semanticCommits": true,
-  "semanticPrefix": "build",
-  "commitMessage": "{{semanticPrefix}} update {{#if groupName}}{{{groupName}}} packages{{else}}{{{depName}}} to version {{{newVersion}}}{{/if}}",
-  "prHourlyLimit": 2,
-  "labels": [
-    "target: minor",
-    "action: merge"
-  ],
   "baseBranches": [
     "master"
-  ],
-  "ignoreDeps": [
-    "@types/node"
   ],
   "packageFiles": [
     "WORKSPACE",
