@@ -1,10 +1,17 @@
 {
-  "separateMajorMinor": false,
   "pinVersions": false,
   "semanticCommits": true,
-  "baseBranches": [
-    "master"
-  ],
+  "semanticPrefix": "build",
+  "separateMajorMinor": false,
+  "prHourlyLimit": 2,
+  "labels": ["target: minor", "action: merge"],
+  "timezone": "America/Tijuana",
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "schedule": ["after 10pm every weekday", "before 4am every weekday", "every weekend"],
+  "baseBranches": ["master"],
+  "ignoreDeps": ["@types/node", "quicktype-core"],
   "packageFiles": [
     "WORKSPACE",
     "package.json",
@@ -13,13 +20,46 @@
   ],
   "packageRules": [
     {
-      "packagePatterns": [
-        "^@bazel\/.*",
-        "^build_bazel.*",
-        "bazel_toolchains"
-      ],
+      "packagePatterns": ["^@angular/.*"],
+      "groupName": "angular",
+      "pinVersions": false
+    },
+    {
+      "packagePatterns": ["^@babel/.*"],
+      "groupName": "babel",
+      "pinVersions": false
+    },
+    {
+      "packagePatterns": ["^@bazel/.*", "^build_bazel.*"],
       "groupName": "bazel",
       "pinVersions": false
+    },
+    {
+      "packageNames": ["typescript"],
+      "separateMinorPatch": true
+    },
+    {
+      "packageNames": ["typescript"],
+      "updateTypes": ["minor", "major"],
+      "enabled": false
+    },
+    {
+      "includePaths": [
+        "sub/package.json"
+      ],
+      "matchPackagePatterns": ["*"],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch-2",
+    },
+    {
+      "excludePaths": [
+"sub/package.json"
+      ],
+      "excludePackagePatterns": ["^@angular/.*"],
+      "matchPackagePatterns": ["*"],
+      "matchUpdateTypes": ["minor", "patch"],
+      "groupName": "all non-major dependencies",
+      "groupSlug": "all-minor-patch"
     }
   ]
 }
