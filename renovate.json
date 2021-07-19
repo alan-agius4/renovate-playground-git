@@ -44,11 +44,10 @@
     {
       "includePaths": ["sub/package.json"],
       "matchPackagePatterns": ["*"],
-      "groupName": "all non-major dependencies",
-      "groupSlug": "all-minor-patch-2"
+      "groupName": "all non-major dependencies-sub",
+      "groupSlug": "all-minor-patch-sub"
     },
     {
-      "ignorePaths": ["sub/package.json"],
       "excludePackagePatterns": ["^@angular/.*"],
       "matchPackagePatterns": ["*"],
       "matchUpdateTypes": ["minor", "patch"],
