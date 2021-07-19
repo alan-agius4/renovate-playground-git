@@ -5,9 +5,6 @@
   "separateMajorMinor": false,
   "labels": ["target: minor", "action: merge"],
   "timezone": "America/Tijuana",
-  "lockFileMaintenance": {
-    "enabled": true
-  },
   "baseBranches": ["master"],
   "ignoreDeps": ["@types/node", "quicktype-core"],
   "packageFiles": [
