@@ -3,17 +3,11 @@
   "semanticCommits": true,
   "semanticPrefix": "build",
   "separateMajorMinor": false,
-  "prHourlyLimit": 2,
   "labels": ["target: minor", "action: merge"],
   "timezone": "America/Tijuana",
   "lockFileMaintenance": {
     "enabled": true
   },
-  "schedule": [
-    "after 10pm every weekday",
-    "before 4am every weekday",
-    "every weekend"
-  ],
   "baseBranches": ["master"],
   "ignoreDeps": ["@types/node", "quicktype-core"],
   "packageFiles": [
