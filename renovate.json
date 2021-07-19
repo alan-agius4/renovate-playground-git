@@ -45,6 +45,7 @@
       "groupSlug": "all-minor-patch-sub"
     },
     {
+      "ignorePaths": ["sub/package.json"],
       "excludePackagePatterns": ["^@angular/.*"],
       "matchPackagePatterns": ["*"],
       "matchUpdateTypes": ["minor", "patch"],
