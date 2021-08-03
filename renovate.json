@@ -50,7 +50,8 @@
       "matchPaths": ["sub/package.json"],
       "matchPackagePatterns": ["*"],
       "groupName": "all non-major dependencies-sub",
-      "groupSlug": "all-minor-patch-sub"
+      "groupSlug": "all-minor-patch-sub",
+      "lockFileMaintenance": { "enabled": false }
     },
     {
       "matchPaths": ["!sub/package.json"],
