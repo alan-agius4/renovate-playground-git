@@ -8,7 +8,7 @@
   "baseBranches": ["master"],
   {
     "lockFileMaintenance": { "enabled": true, "schedule": "before 1pm on Tuesday" }
-   }
+   },
   "ignoreDeps": ["@types/node", "quicktype-core"],
   "packageFiles": [
     "WORKSPACE",
