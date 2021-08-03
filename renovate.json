@@ -7,7 +7,7 @@
   "timezone": "America/Tijuana",
   "baseBranches": ["master"],
 
-  "lockFileMaintenance": { "enabled": true, "schedule": "before 11pm on Tuesday" },
+  "lockFileMaintenance": { "enabled": true, "schedule": "before 5am on Tuesday" },
 
   "ignoreDeps": ["@types/node", "quicktype-core"],
   "packageFiles": [
