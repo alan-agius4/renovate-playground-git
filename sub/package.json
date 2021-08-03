@@ -3,6 +3,6 @@
   "comment": "This file is needed so that depedencies are synced by Renovate.",
   "private": true,
   "dependencies": {
-    "rxjs": "~6.6.0",
+    "rxjs": "~6.6.0"
   }
 }
