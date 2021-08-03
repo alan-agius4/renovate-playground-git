@@ -1,6 +1,7 @@
 {
     "dependencies": {
         "karma": "^2",
-        "typescript": "^1"
+        "typescript": "^1",
+        "rxjs": "^6"
     }
 }
