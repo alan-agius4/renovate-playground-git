@@ -47,19 +47,24 @@
       "enabled": false
     },
     {
-      "matchPaths": ["sub/package.json"],
+      "matchPaths": [
+        "sub/package.json"
+      ],
       "matchPackagePatterns": ["*"],
-      "groupName": "all non-major dependencies-sub",
-      "groupSlug": "all-minor-patch-sub",
+      "groupName": "schematics dependencies",
+      "groupSlug": "all-schematics-dependencies",
       "lockFileMaintenance": { "enabled": false }
     },
     {
-      "matchPaths": ["!sub/package.json"],
-      "excludePackagePatterns": ["^@angular/.*"],
+      "matchPaths": [
+        "!sub/package.json"
+      ],
+      "excludePackagePatterns": ["^@angular/.*", "angular/dev-infra"],
       "matchPackagePatterns": ["*"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
     }
+  ]
   ]
 }
