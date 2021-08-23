@@ -13,7 +13,7 @@
   "packageFiles": [
     "WORKSPACE",
     "package.json",
-    "sub/package.json",
+    "sub/latest-versions/package.json",
     "tests/legacy-cli/e2e/ng-snapshot/package.json"
   ],
   "packageRules": [
@@ -48,7 +48,7 @@
     },
     {
       "matchPaths": [
-        "sub/package.json"
+        "sub/latest-versions/package.json"
       ],
       "matchPackagePatterns": ["*"],
       "groupName": "schematics dependencies",
@@ -57,7 +57,7 @@
     },
     {
       "matchPaths": [
-        "!sub/package.json"
+        "!sub/latest-versions/package.json"
       ],
       "excludePackagePatterns": ["^@angular/.*", "angular/dev-infra"],
       "matchPackagePatterns": ["*"],
