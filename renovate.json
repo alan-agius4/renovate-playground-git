@@ -3,7 +3,7 @@
   "semanticCommits": true,
   "semanticPrefix": "build",
   "allowPostUpgradeCommandTemplating": true,
-  "allowedPostUpgradeCommands": ['^tslint --fix'],
+  "allowedPostUpgradeCommands": ["^tslint --fix"],
   "postUpgradeTasks": {
     "commands": ["tslint --fix"],
     "fileFilters": ["yarn.lock", "**/*.js"],
