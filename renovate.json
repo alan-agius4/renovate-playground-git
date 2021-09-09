@@ -2,6 +2,13 @@
   "pinVersions": false,
   "semanticCommits": true,
   "semanticPrefix": "build",
+  "allowPostUpgradeCommandTemplating": true,
+  "allowedPostUpgradeCommands": ['^tslint --fix'],
+  "postUpgradeTasks": {
+    "commands": ["tslint --fix"],
+    "fileFilters": ["yarn.lock", "**/*.js"],
+    "executionMode": "update"
+  }
   "separateMajorMinor": false,
   "labels": ["target: minor", "action: merge"],
   "timezone": "America/Tijuana",
