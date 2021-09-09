@@ -3,7 +3,7 @@
   "semanticCommits": true,
   "semanticPrefix": "build",
   "allowPostUpgradeCommandTemplating": true,
- "allowedPostUpgradeCommands": ['^npm ci --ignore-scripts$', '^npx ng update'],
+ "allowedPostUpgradeCommands": ["^npm ci --ignore-scripts$"],
    "postUpgradeTasks": {
         "commands": [
           "npm ci --ignore-scripts",
