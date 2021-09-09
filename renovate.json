@@ -6,7 +6,6 @@
   "allowedPostUpgradeCommands": ["^tslint --fix"],
   "postUpgradeTasks": {
     "commands": ["tslint --fix"],
-    "fileFilters": ["yarn.lock", "**/*.js"],
     "executionMode": "update"
   },
   "separateMajorMinor": false,
