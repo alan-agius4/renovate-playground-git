@@ -8,7 +8,7 @@
     "commands": ["tslint --fix"],
     "fileFilters": ["yarn.lock", "**/*.js"],
     "executionMode": "update"
-  }
+  },
   "separateMajorMinor": false,
   "labels": ["target: minor", "action: merge"],
   "timezone": "America/Tijuana",
