@@ -3,11 +3,13 @@
   "semanticCommits": true,
   "semanticPrefix": "build",
   "allowPostUpgradeCommandTemplating": true,
-  "allowedPostUpgradeCommands": ["^tslint --fix"],
-  "postUpgradeTasks": {
-    "commands": ["tslint --fix"],
-    "executionMode": "update"
-  },
+ "allowedPostUpgradeCommands": ['^npm ci --ignore-scripts$', '^npx ng update'],
+   "postUpgradeTasks": {
+        "commands": [
+          "npm ci --ignore-scripts",
+        ],
+        "fileFilters": ["**/**"]
+      },
   "separateMajorMinor": false,
   "labels": ["target: minor", "action: merge"],
   "timezone": "America/Tijuana",
