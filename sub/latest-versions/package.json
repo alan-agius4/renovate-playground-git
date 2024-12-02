@@ -3,7 +3,7 @@
   "comment": "This file is needed so that depedencies are synced by Renovate.",
   "private": true,
   "dependencies": {
-    "@types/jasmine": "~3.6.0",
-    "jasmine": "~3.6.0"
+    "@types/jasmine": "~5.1.0",
+    "jasmine": "~5.5.0"
   }
 }
