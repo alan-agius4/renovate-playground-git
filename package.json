@@ -2,6 +2,11 @@
   "description": "Package versions used by schematics in @schematics/angular.",
   "comment": "This file is needed so that depedencies are synced by Renovate.",
   "private": true,
+  "engines": {
+    "node": "^18.19.1 || ^20.11.1 || >=22.0.0",
+    "yarn": ">=1.21.1 <2",
+    "npm": "Please use yarn instead of NPM to install dependencies"
+  },
   "dependencies": {
     "@types/jasmine": "~3.8.0",
     "@types/node": "^12.11.1",
