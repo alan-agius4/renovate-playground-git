@@ -16,5 +16,8 @@
     "tslib": "^2.3.0",
     "typescript": "~4.3.5",
     "zone.js": "~0.11.4"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": []
   }
 }
