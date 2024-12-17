@@ -4,7 +4,8 @@
   "private": true,
   "engines": {
     "node": "^18.19.1 || ^20.11.1 || >=22.0.0",
-    "npm": "Please use yarn instead of NPM to install dependencies"
+    "npm": "Please use yarn instead of NPM to install dependencies",
+    "pnpm": "Please use yarn instead of NPM to install dependencies"
   },
   "dependencies": {
     "@types/jasmine": "~3.8.0",
