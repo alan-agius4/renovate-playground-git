@@ -1,77 +1,96 @@
 {
-  "pinVersions": false,
-  "semanticCommits": true,
-  "semanticPrefix": "build",
-  "allowPostUpgradeCommandTemplating": true,
- "allowedPostUpgradeCommands": ["^npm ci --ignore-scripts$"],
-   "postUpgradeTasks": {
-        "commands": [
-          "npm ci --ignore-scripts"
-        ],
-        "fileFilters": ["**/**"]
-      },
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "rangeStrategy": "replace",
+  "semanticCommits": "enabled",
+  "semanticCommitType": "build",
+  "semanticCommitScope": "",
   "separateMajorMinor": false,
+  "prHourlyLimit": 2,
   "labels": ["target: minor", "action: merge"],
   "timezone": "America/Tijuana",
+  "postUpgradeTasks": {
+    "commands": [
+      "git restore .yarn/releases/yarn-4.5.0.cjs",
+      "yarn install --frozen-lockfile --non-interactive",
+      "yarn bazel run @npm2//:sync"
+    ],
+    "fileFilters": [".aspect/rules/external_repository_action_cache/**/*", "pnpm-lock.yaml"],
+    "executionMode": "branch"
+  },
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "dependencyDashboard": true,
   "baseBranches": ["master"],
-
-  "lockFileMaintenance": { "enabled": true, "schedule": "before 11am on Tuesday" },
-
-  "ignoreDeps": ["@types/node", "quicktype-core"],
-  "packageFiles": [
+  "ignoreDeps": ["@types/node", "@types/express", "build_bazel_rules_nodejs", "rules_pkg", "yarn"],
+  "includePaths": [
     "WORKSPACE",
     "package.json",
-    "sub/latest-versions/package.json",
-    "tests/legacy-cli/e2e/ng-snapshot/package.json"
+    "packages/**/package.json",
+    "tests/legacy-cli/e2e/ng-snapshot/package.json",
+    ".github/workflows/**/*.yml"
   ],
+  "ignorePaths": ["pnpm-lock.yaml"],
   "packageRules": [
     {
-      "packagePatterns": ["^@angular/.*"],
+      "matchPackageNames": ["quicktype-core"],
+      "schedule": ["before 4:00am on the first day of the month"]
+    },
+    {
       "groupName": "angular",
-      "pinVersions": false
+      "matchDepNames": ["/^@angular/.*/", "/angular/dev-infra/"]
     },
     {
-      "packagePatterns": ["^@babel/.*"],
       "groupName": "babel",
-      "pinVersions": false
+      "matchDepNames": ["/^@babel/.*/"]
     },
     {
-      "packagePatterns": ["^@bazel/.*", "^build_bazel.*"],
       "groupName": "bazel",
-      "pinVersions": false
+      "matchDepNames": ["/^@bazel/.*/", "/^build_bazel.*/"]
     },
     {
-      "packageNames": ["typescript", "rxjs", "tslib"],
-      "separateMinorPatch": true
+      "separateMinorPatch": true,
+      "matchPackageNames": ["typescript", "rxjs", "tslib"]
     },
     {
-      "packageNames": ["typescript", "rxjs", "tslib"],
-      "updateTypes": ["major"],
-      "enabled": false
+      "enabled": false,
+      "matchPackageNames": ["typescript", "rxjs", "tslib"],
+      "matchUpdateTypes": ["major"]
     },
     {
-      "packageNames": ["typescript"],
-      "updateTypes": ["minor"],
-      "enabled": false
+      "enabled": false,
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["minor"]
     },
     {
-      "matchPaths": [
-        "sub/latest-versions/package.json"
+      "matchFileNames": [
+        "packages/angular_devkit/schematics_cli/blank/project-files/package.json",
+        "packages/angular_devkit/schematics_cli/schematic/files/package.json",
+        "packages/schematics/angular/utility/latest-versions/package.json"
       ],
-      "matchPackagePatterns": ["*"],
+      "matchPackageNames": ["*"],
       "groupName": "schematics dependencies",
       "groupSlug": "all-schematics-dependencies",
-      "lockFileMaintenance": { "enabled": false }
+      "lockFileMaintenance": {
+        "enabled": false
+      }
     },
     {
-      "matchPaths": [
-        "!sub/latest-versions/package.json"
+      "matchFileNames": [
+        "!packages/angular_devkit/schematics_cli/blank/project-files/package.json",
+        "!packages/angular_devkit/schematics_cli/schematic/files/package.json",
+        "!packages/schematics/angular/utility/latest-versions/package.json"
       ],
-      "excludePackagePatterns": ["^@angular/.*", "angular/dev-infra"],
-      "matchPackagePatterns": ["*"],
+      "matchPackageNames": ["*", "!/^@angular/.*/", "!/angular/dev-infra/"],
       "matchUpdateTypes": ["minor", "patch"],
       "groupName": "all non-major dependencies",
       "groupSlug": "all-minor-patch"
+    },
+    {
+      "matchFileNames": [".github/workflows/scorecard.yml"],
+      "matchPackageNames": ["*"],
+      "groupName": "scorecard action dependencies",
+      "groupSlug": "scorecard-action"
     }
   ]
 }
