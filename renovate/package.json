@@ -1,0 +1,7 @@
+{
+  "name": "ng-renovate",
+  "type": "commonjs",
+  "dependencies": {
+    "renovate": "./renovate-0.0.0-semantic-release.tgz"
+  }
+}
