@@ -16,7 +16,7 @@ jobs:
     strategy:
       matrix:
         REPOSITORY:
-          - alan-agius4/components
+          - alan-agius4/renovate-playground-git
     runs-on: ubuntu-latest
     steps:
       # Because the checkout and setup node action is contained in the dev-infra repo, we must
@@ -33,8 +33,8 @@ jobs:
       - run: .github/renovate/node_modules/.bin/renovate
         env:
           LOG_LEVEL: debug
-          RENOVATE_TOKEN: ${{ secrets.NG_RENOVATE_USER_ACCESS_TOKEN }}
           RENOVATE_FORK_ORG: ng-packagr
+          RENOVATE_TOKEN: ${{ secrets.NG_RENOVATE_USER_ACCESS_TOKEN }}
           RENOVATE_FORK_TOKEN: ${{ secrets.NG_RENOVATE_USER_ACCESS_TOKEN }}
           GITHUB_COM_TOKEN: ${{ secrets.NG_RENOVATE_USER_ACCESS_TOKEN }}
           RENOVATE_CONFIG_FILE: .github/renovate/runner-config.js
