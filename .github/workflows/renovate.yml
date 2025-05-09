@@ -27,7 +27,9 @@ jobs:
       # TODO: Use pnpm/action-setup for pnpm install once pnpm is the packageManager for this repo
       - run: yarn --cwd .github/renovate install --immutable
         shell: bash
-      - run: |
+      - name: core
+        run: |
+          npm install corepack -g
           corepack enable
 
       - run: .github/renovate/node_modules/.bin/renovate
