@@ -26,7 +26,7 @@ jobs:
       - uses: angular/dev-infra/github-actions/npm/checkout-and-setup-node@2c7bab7971084f3f1f6f72735099a9591ee5ebcb
 
       # TODO: Use pnpm/action-setup for pnpm install once pnpm is the packageManager for this repo
-      - run: yarn --cwd .github/ng-renovate install --immutable
+      - run: yarn --cwd .github/ng-renovate install
         shell: bash
 
       - run: .github/renovate/node_modules/.bin/renovate
