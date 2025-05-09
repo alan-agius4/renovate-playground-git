@@ -3,9 +3,7 @@
   "comment": "This file is needed so that depedencies are synced by Renovate.",
   "private": true,
   "engines": {
-    "node": "^18.19.1 || ^20.11.1 || >=22.0.0",
-    "npm": "Please use yarn instead of NPM to install dependencies",
-    "yarn": "^4.5"
+    "node": "^18.19.1 || ^20.11.1 || >=22.0.0"
   },
   "dependencies": {
     "@types/jasmine": "~3.8.0",
