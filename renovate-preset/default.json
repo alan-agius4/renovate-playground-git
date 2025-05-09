@@ -1,0 +1,98 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "dependencyDashboard": true,
+  "commitBody": "See associated pull request for more information.",
+  "ignoreDeps": ["yarn", "pnpm"],
+  "labels": ["area: build & ci", "action: review"],
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+  "prHourlyLimit": 2,
+  "rangeStrategy": "replace",
+  "schedule": ["after 10:00pm every weekday", "before 4:00am every weekday", "every weekend"],
+  "semanticCommits": "enabled",
+  "semanticCommitScope": "",
+  "semanticCommitType": "build",
+  "separateMajorMinor": false,
+  "timezone": "America/Tijuana",
+  "packageRules": [
+    {
+      "groupName": "all non-major dependencies",
+      "matchPackageNames": ["*"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "groupName": "cross-repo Angular dependencies",
+      "schedule": ["at any time"],
+      "matchPackageNames": [
+        "@angular/{/,}**",
+        "angular/{/,}**",
+        "@angular-devkit{/,}**",
+        "@schematics/{/,}**"
+      ]
+    },
+    {
+      "groupName": "cross-repo Angular dependencies",
+      "matchBaseBranches": ["main"],
+      "followTag": "next",
+      "matchPackageNames": [
+        "@angular/{/,}**",
+        "angular/{/,}**",
+        "@angular-devkit{/,}**",
+        "@schematics/{/,}**"
+      ]
+    },
+    {
+      "matchPackageNames": ["quicktype-core"],
+      "schedule": ["before 4:00am on the first day of the month"]
+    },
+    {
+      "groupName": "bazel",
+      "matchDepNames": [
+        "/^@bazel/.*/"
+      ]
+    },
+    {
+      "groupName": "bazel",
+      "matchManagers": ["bazel"]
+    },
+    {
+      "enabled": false,
+      "matchPackageNames": ["@types/node"],
+      "matchUpdateTypes": ["major"]
+    },
+    {
+      "matchPackageNames": ["typescript", "rxjs", "tslib"],
+      "separateMinorPatch": true
+    },
+    {
+      "enabled": false,
+      "matchPackageNames": ["rxjs", "tslib"],
+      "matchUpdateTypes": ["major"]
+    },
+    {
+      "enabled": false,
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["major", "minor"]
+    },
+    {
+      "groupName": "scorecard action dependencies",
+      "matchFileNames": [".github/workflows/scorecard.yml"],
+      "matchPackageNames": ["*"]
+    },
+    {
+      "groupName": "node.js dependency",
+      "matchDepNames": ["node"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "enabled": false,
+      "matchDepNames": ["node"],
+      "matchUpdateTypes": ["major"]
+    },
+    {
+      "enabled": false,
+      "matchCurrentVersion": "/^[~^]?0\\.0\\.0-/"
+    }
+  ]
+}

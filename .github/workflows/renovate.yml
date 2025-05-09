@@ -1,15 +1,22 @@
 name: Angular-Org Renovate
 
 on:
+  push:
+    branches:
+      # We do no run this on the default branch (main), as this is done by Renovate.
+      - 'master'
   workflow_dispatch:
-  schedule:
-    # Runs every 60 minutes.
-    # This is the recommanded running time https://github.com/renovatebot/renovate/discussions/16658
-    - cron: '0/60 * * * *'
+  # schedule:
+  #   # Runs every 60 minutes.
+  #   # This is the recommanded running time https://github.com/renovatebot/renovate/discussions/16658
+  #   - cron: '0/60 * * * *'
 
 # Declare default permissions as read only.
 permissions:
   contents: read
+
+env:
+  COREPACK_ENABLE_DOWNLOAD_PROMPT: 0 # Disable corepack prompt
 
 jobs:
   renovate:
