@@ -32,7 +32,6 @@
       ]
     },
     {
-      "groupName": "cross-repo Angular dependencies",
       "matchBaseBranches": ["main"],
       "followTag": "next",
       "matchPackageNames": [
