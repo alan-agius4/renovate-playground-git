@@ -4,7 +4,7 @@ on:
   push:
     branches:
       # We do no run this on the default branch (main), as this is done by Renovate.
-      - 'master'
+      - 'main'
   workflow_dispatch:
   # schedule:
   #   # Runs every 60 minutes.
