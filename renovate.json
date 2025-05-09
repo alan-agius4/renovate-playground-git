@@ -12,7 +12,7 @@
     "enabled": true
   },
   "dependencyDashboard": true,
-  "baseBranches": ["master"],
+  "baseBranches": ["master", "dev"],
   "ignoreDeps": ["@types/node", "@types/express", "build_bazel_rules_nodejs", "rules_pkg", "yarn"],
   "includePaths": [
     "WORKSPACE",
