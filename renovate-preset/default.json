@@ -28,7 +28,8 @@
         "@angular/{/,}**",
         "angular/{/,}**",
         "@angular-devkit{/,}**",
-        "@schematics/{/,}**"
+        "@schematics/{/,}**",
+        "ng-packagr"
       ]
     },
     {
@@ -38,7 +39,8 @@
         "@angular/{/,}**",
         "angular/{/,}**",
         "@angular-devkit{/,}**",
-        "@schematics/{/,}**"
+        "@schematics/{/,}**",
+        "ng-packagr"
       ]
     },
     {
