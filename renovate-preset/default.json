@@ -7,7 +7,7 @@
   "lockFileMaintenance": {
     "enabled": true
   },
-  "prHourlyLimit": 2,
+  "prHourlyLimit": 4,
   "rangeStrategy": "replace",
   "schedule": ["after 10:00pm every weekday", "before 4:00am every weekday", "every weekend"],
   "semanticCommits": "enabled",
