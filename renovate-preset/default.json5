@@ -1,5 +1,6 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["group:monorepo"],
   "dependencyDashboard": true,
   "rangeStrategy": "replace",
 
@@ -33,7 +34,7 @@
     {
       "groupName": "all non-major dependencies",
       "matchPackageNames": ["*"],
-      "matchUpdateTypes": ["minor", "patch"]
+      "matchUpdateTypes": ["digest", "patch", "minor"]
     },
 
     // ============================================================================
@@ -106,7 +107,7 @@
     {
       "groupName": null,
       "matchDepNames": ["node", "pnpm", "npm", "yarn"],
-      "matchUpdateTypes": ["minor", "patch"]
+      "matchUpdateTypes": ["digest", "minor", "patch"]
     },
 
     // Fully disable TypeScript major & minor updates

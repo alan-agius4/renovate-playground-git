@@ -7,6 +7,8 @@
   },
   "packageManager": "pnpm@9.15.6",
   "dependencies": {
+    "@octokit/auth-app": "^6",
+    "@octokit/core": "^5",
     "@angular/core": "^18",
     "@angular/common": "20.0.0-next.0",
     "@types/jasmine": "~5.1.0",
