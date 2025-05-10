@@ -3,7 +3,7 @@
   "dependencyDashboard": true,
   "rangeStrategy": "replace",
 
-  // Schedule Renovate to run on weekday nights and weekends
+  // Schedule Renovate to run during off-peak hours
   "schedule": [
     "after 10:00pm every weekday",
     "before 4:00am every weekday",
@@ -12,27 +12,24 @@
   "prHourlyLimit": 4,
   "timezone": "America/Tijuana",
 
-  // Commit message and PR settings
+  // Commit and PR customization
   "commitBody": "See associated pull request for more information.",
   "semanticCommits": "enabled",
   "semanticCommitScope": "",
   "semanticCommitType": "build",
   "labels": ["area: build & ci", "action: review"],
 
-  // Exclude updates for Yarn as a local version is managed manually
-  "ignoreDeps": ["yarn"],
-
-  // Enable lock file maintenance for consistent dependency resolution
+  // Maintain lock files regularly to ensure consistency
   "lockFileMaintenance": {
     "enabled": true
   },
 
   "packageRules": [
     // ============================================================================
-    // General Grouping and Update Behavior
+    // GENERAL GROUPING & UPDATE BEHAVIOR
     // ============================================================================
 
-    // Group all non-major updates (minor and patch) into a single PR
+    // Group all non-major updates (minor and patch) together
     {
       "groupName": "all non-major dependencies",
       "matchPackageNames": ["*"],
@@ -40,10 +37,10 @@
     },
 
     // ============================================================================
-    // Ecosystem-Specific Grouping Rules
+    // ECOSYSTEM-SPECIFIC GROUPING
     // ============================================================================
 
-    // Group all Bazel-related updates (by name or manager)
+    // Group Bazel updates by package name or manager
     {
       "groupName": "bazel",
       "matchDepNames": ["/^@bazel/.*/"]
@@ -53,7 +50,7 @@
       "matchManagers": ["bazel"]
     },
 
-    // Group updates for Angular ecosystem dependencies
+    // Group updates related to Angular ecosystem across repositories
     {
       "groupName": "cross-repo Angular dependencies",
       "followTag": "next",
@@ -67,36 +64,52 @@
         "ng-packagr"
       ]
     },
-    // On non-'main' branches, override default behavior to not follow Angular's 'next' tag
+
+    // Disable 'next' tag tracking on non-main branches
     {
       "matchBaseBranches": ["!/main/"],
       "followTag": null
     },
 
     // ============================================================================
-    // Dependency-Specific Update Controls
+    // DEPENDENCY-SPECIFIC UPDATE CONTROLS
     // ============================================================================
-    // Disable major updates for selected dependencies
+
+    // Disable major updates for specified dependencies
     {
       "enabled": false,
-      "matchDepNames": ["@types/node", "rxjs", "tslib", "node", "pnpm"],
+      "matchDepNames": [
+        "@types/node",
+        "rxjs",
+        "tslib",
+        "node",
+        "pnpm",
+        "npm",
+        "yarn"
+      ],
       "matchUpdateTypes": ["major"]
     },
 
-    // Keep minor and patch updates separate
+    // Keep minor and patch updates separate for TypeScript
     {
       "matchPackageNames": ["typescript"],
       "separateMinorPatch": true
     },
 
-    // Allow only minor and patch updates
+    // Group TypeScript-related dependencies
+    {
+      "groupName": "typescript dependencies",
+      "matchPackageNames": ["typescript", "tslib"]
+    },
+
+    // Allow only minor and patch updates for runtime tools
     {
       "groupName": null,
-      "matchDepNames": ["node", "pnpm"],
+      "matchDepNames": ["node", "pnpm", "npm", "yarn"],
       "matchUpdateTypes": ["minor", "patch"]
     },
 
-    // Disable both major and minor updates
+    // Fully disable TypeScript major & minor updates
     {
       "enabled": false,
       "matchPackageNames": ["typescript"],
@@ -104,10 +117,10 @@
     },
 
     // ============================================================================
-    // Workflow-Specific Update Rules
+    // WORKFLOW-SPECIFIC UPDATE RULES
     // ============================================================================
 
-    // Group all updates to dependencies declared in the 'scorecard.yml' GitHub Actions workflow
+    // Group dependencies in the scorecard GitHub Actions workflow
     {
       "groupName": "scorecard action dependencies",
       "matchFileNames": [".github/workflows/scorecard.yml"],
@@ -115,10 +128,10 @@
     },
 
     // ============================================================================
-    // General Exclusion Rules
+    // EXCLUSION RULES
     // ============================================================================
 
-    // Disable updates for placeholder-style versions
+    // Disable updates for placeholder or 0.0.0-style versions
     {
       "enabled": false,
       "matchCurrentVersion": "/^[~^]?0\\.0\\.0-/"
