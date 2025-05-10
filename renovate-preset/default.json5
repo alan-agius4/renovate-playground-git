@@ -41,15 +41,21 @@
     // ECOSYSTEM-SPECIFIC GROUPING
     // ============================================================================
 
-    // Group Bazel updates by package name or manager
-    {
-      "groupName": "bazel dependencies",
-      "matchPackageNames": ["@bazel/**"]
-    },
+    // Group Bazel updates
     {
       "groupName": "bazel dependencies",
       "matchManagers": ["bazel"]
     },
+
+    // Ungroup Node.js runtime and package managers
+    {
+      "groupName": null,
+      "matchPackageNames": ["node", "pnpm", "npm", "yarn"]
+    },
+
+    // ============================================================================
+    // DEPENDENCY-SPECIFIC UPDATE CONTROLS
+    // ============================================================================
 
     // Group updates related to Angular ecosystem across repositories
     {
@@ -72,10 +78,6 @@
       "followTag": null
     },
 
-    // ============================================================================
-    // DEPENDENCY-SPECIFIC UPDATE CONTROLS
-    // ============================================================================
-
     // Keep minor and patch updates separate for TypeScript
     {
       "matchPackageNames": ["typescript"],
@@ -86,12 +88,6 @@
     {
       "groupName": "typescript dependencies",
       "matchPackageNames": ["typescript", "tslib"]
-    },
-
-    // Ungroup Node.js runtime and package managers
-    {
-      "groupName": null,
-      "matchPackageNames": ["node", "pnpm", "npm", "yarn"]
     },
 
     // Limit how many times these packages get updated (They deploy each merged PR)
