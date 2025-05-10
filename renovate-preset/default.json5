@@ -10,6 +10,7 @@
     "before 4:00am every weekday",
     "every weekend"
   ],
+  "prConcurrentLimit": 8,
   "prHourlyLimit": 4,
   "timezone": "America/Tijuana",
 
@@ -76,21 +77,6 @@
     // DEPENDENCY-SPECIFIC UPDATE CONTROLS
     // ============================================================================
 
-    // Disable major updates for specified dependencies
-    {
-      "enabled": false,
-      "matchPackageNames": [
-        "@types/node",
-        "rxjs",
-        "tslib",
-        "node",
-        "pnpm",
-        "npm",
-        "yarn"
-      ],
-      "matchUpdateTypes": ["major"]
-    },
-
     // Keep minor and patch updates separate for TypeScript
     {
       "matchPackageNames": ["typescript"],
@@ -103,18 +89,16 @@
       "matchPackageNames": ["typescript", "tslib"]
     },
 
-    // Allow only minor and patch updates for runtime tools
+    // Ungroup Node.js runtime and package packagers
     {
       "groupName": null,
-      "matchPackageNames": ["node", "pnpm", "npm", "yarn"],
-      "matchUpdateTypes": ["digest", "minor", "patch"]
+      "matchPackageNames": ["node", "pnpm", "npm", "yarn"]
     },
 
-    // Fully disable TypeScript major & minor updates
+    // Limit how many times these packages get updated (They deploy each merged PR)
     {
-      "enabled": false,
-      "matchPackageNames": ["typescript"],
-      "matchUpdateTypes": ["major", "minor"]
+      "matchPackageNames": ["renovate", "quicktype-core"],
+      "schedule": ["on sunday and wednesday"]
     },
 
     // ============================================================================
@@ -136,6 +120,28 @@
     {
       "enabled": false,
       "matchCurrentVersion": "/^[~^]?0\\.0\\.0-/"
+    },
+
+    // Disable major updates for specified dependencies
+    {
+      "enabled": false,
+      "matchPackageNames": [
+        "@types/node",
+        "rxjs",
+        "tslib",
+        "node",
+        "pnpm",
+        "npm",
+        "yarn"
+      ],
+      "matchUpdateTypes": ["major"]
+    },
+
+    // Fully disable TypeScript major & minor updates
+    {
+      "enabled": false,
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["major", "minor"]
     }
   ]
 }
