@@ -3,7 +3,7 @@
   "dependencyDashboard": true,
   "rangeStrategy": "replace",
 
-  // Scheduling and run configuration
+  // Schedule Renovate to run on weekday nights and weekends
   "schedule": [
     "after 10:00pm every weekday",
     "before 4:00am every weekday",
@@ -12,7 +12,7 @@
   "prHourlyLimit": 4,
   "timezone": "America/Tijuana",
 
-  // Commit and PR configuration
+  // Commit message and PR settings
   "commitBody": "See associated pull request for more information.",
   "semanticCommits": "enabled",
   "semanticCommitScope": "",
@@ -20,30 +20,31 @@
   "separateMajorMinor": false,
   "labels": ["area: build & ci", "action: review"],
 
-  // Exclude Yarn from updates since a local version is used
+  // Exclude updates for Yarn as a local version is managed manually
   "ignoreDeps": ["yarn"],
 
+  // Enable lock file maintenance for consistent dependency resolution
   "lockFileMaintenance": {
     "enabled": true
   },
 
   "packageRules": [
-    // ------------------------------------------------------------------------
-    // General Grouping and Update Rules
-    // ------------------------------------------------------------------------
+    // ============================================================================
+    // General Grouping and Update Behavior
+    // ============================================================================
 
-    // Group all minor and patch updates into a single PR
+    // Group all non-major updates (minor and patch) into a single PR
     {
       "groupName": "all non-major dependencies",
       "matchPackageNames": ["*"],
       "matchUpdateTypes": ["minor", "patch"]
     },
 
-    // ------------------------------------------------------------------------
-    // Framework / Ecosystem-Specific Rules
-    // ------------------------------------------------------------------------
+    // ============================================================================
+    // Ecosystem-Specific Grouping Rules
+    // ============================================================================
 
-    // Group all Bazel-related updates together
+    // Group all Bazel-related updates (by name or manager)
     {
       "groupName": "bazel",
       "matchDepNames": ["/^@bazel/.*/"]
@@ -53,7 +54,7 @@
       "matchManagers": ["bazel"]
     },
 
-    // Group all Angular-related dependencies
+    // Group updates for Angular ecosystem dependencies
     {
       "groupName": "cross-repo Angular dependencies",
       "schedule": ["at any time"],
@@ -65,83 +66,64 @@
         "ng-packagr"
       ]
     },
-    // For the 'main' branch, use Angular's 'next' tag for updates
+    // On non-'main' branches, override default behavior to not follow Angular's 'next' tag
     {
-      "matchBaseBranches": ["main"],
-      "followTag": "next",
-      "matchPackageNames": [
-        "@angular/{/,}**",
-        "angular/{/,}**",
-        "@angular-devkit{/,}**",
-        "@schematics/{/,}**",
-        "ng-packagr"
-      ]
+      "matchBaseBranches": ["!/main/"],
+      "followTag": null
     },
 
-    // ------------------------------------------------------------------------
-    // Specific Dependency Update Control
-    // ------------------------------------------------------------------------
-
-    // Node.js-related minor and patch updates
+    // ============================================================================
+    // Dependency-Specific Update Controls
+    // ============================================================================
+    // Allow only minor and patch updates for Node and PNPM
     {
-      "groupName": "node.js dependency",
-      "matchDepNames": ["node"],
+      "groupName": null,
+      "matchDepNames": ["node", "pnpm"],
       "matchUpdateTypes": ["minor", "patch"]
     },
+    // Disable major updates for Node and PNPM
     {
       "enabled": false,
-      "matchDepNames": ["node"],
+      "matchDepNames": ["node", "pnpm"],
       "matchUpdateTypes": ["major"]
     },
 
-    // Package managers minor and patch updates
-    {
-      "groupName": "pnpm dependency",
-      "matchDepNames": ["pnpm"],
-      "matchUpdateTypes": ["minor", "patch"]
-    },
-    {
-      "enabled": false,
-      "matchDepNames": ["pnpm"],
-      "matchUpdateTypes": ["major"]
-    },
-
-    // Separate minor and patch updates for these dependencies
+    // Keep minor and patch updates separate for selected dependencies
     {
       "matchPackageNames": ["typescript", "rxjs", "tslib"],
       "separateMinorPatch": true
     },
 
-    // Disable major updates for these dependencies
+    // Disable major updates for selected dependencies
     {
       "enabled": false,
       "matchPackageNames": ["@types/node", "rxjs", "tslib"],
       "matchUpdateTypes": ["major"]
     },
 
-    // Disable major and minor updates for these dependencies
+    // Disable both major and minor updates for TypeScript
     {
       "enabled": false,
       "matchPackageNames": ["typescript"],
       "matchUpdateTypes": ["major", "minor"]
     },
 
-    // ------------------------------------------------------------------------
-    // Workflow-Specific Rules
-    // ------------------------------------------------------------------------
+    // ============================================================================
+    // Workflow-Specific Update Rules
+    // ============================================================================
 
-    // Group dependencies used in the 'scorecard.yml' workflow
+    // Group all updates to dependencies declared in the 'scorecard.yml' GitHub Actions workflow
     {
       "groupName": "scorecard action dependencies",
       "matchFileNames": [".github/workflows/scorecard.yml"],
       "matchPackageNames": ["*"]
     },
 
-    // ------------------------------------------------------------------------
-    // General Disabling Rules
-    // ------------------------------------------------------------------------
+    // ============================================================================
+    // General Exclusion Rules
+    // ============================================================================
 
-    // Disable updates for pre-release versions (e.g., 0.0.0-PLACEHOLDER)
+    // Disable updates for placeholder-style pre-release versions
     {
       "enabled": false,
       "matchCurrentVersion": "/^[~^]?0\\.0\\.0-/"
