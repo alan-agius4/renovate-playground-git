@@ -136,7 +136,7 @@
       "matchUpdateTypes": ["major"]
     },
 
-    // Disable TypeScript major & minor updates
+    // Disable TypeScript major and minor updates
     {
       "enabled": false,
       "matchPackageNames": ["typescript"],
