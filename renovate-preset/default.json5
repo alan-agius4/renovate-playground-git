@@ -64,8 +64,8 @@
       "separateMajorMinor": false,
       "schedule": ["at any time"],
       "matchPackageNames": [
-        "@angular/**",
         "angular/**",
+        "@angular/**",
         "@angular-devkit/**",
         "@schematics/**",
         "ng-packagr"
