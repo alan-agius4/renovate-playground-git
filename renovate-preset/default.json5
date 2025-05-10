@@ -7,7 +7,7 @@
   // Schedule Renovate to run during off-peak hours
   "schedule": [
     "after 10:00pm every weekday",
-    "before 4:00am every weekday",
+    "before 5:00am every weekday",
     "every weekend"
   ],
   "prConcurrentLimit": 8,
@@ -33,7 +33,13 @@
     // Group all non-major updates (minor and patch) together
     {
       "groupName": "all non-major dependencies",
-      "matchPackageNames": ["*"],
+      "matchPackageNames": [
+        "*",
+        "!node",
+        "!pnpm",
+        "!npm",
+        "yarn"
+      ],
       "matchUpdateTypes": ["digest", "patch", "minor"]
     },
 
@@ -45,12 +51,6 @@
     {
       "groupName": "bazel dependencies",
       "matchManagers": ["bazel"]
-    },
-
-    // Ungroup Node.js runtime and package managers
-    {
-      "groupName": null,
-      "matchPackageNames": ["node", "pnpm", "npm", "yarn"]
     },
 
     // ============================================================================
