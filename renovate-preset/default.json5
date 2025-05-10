@@ -43,11 +43,11 @@
 
     // Group Bazel updates by package name or manager
     {
-      "groupName": "bazel",
+      "groupName": "bazel packages",
       "matchPackageNames": ["@bazel/**"]
     },
     {
-      "groupName": "bazel",
+      "groupName": "bazel packages",
       "matchManagers": ["bazel"]
     },
 
