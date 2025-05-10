@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      '@angular/common':
+        specifier: 20.0.0-next.0
+        version: 20.0.0-next.0(@angular/core@18.2.13(rxjs@6.6.7)(zone.js@0.11.8))(rxjs@6.6.7)
       '@angular/core':
         specifier: ^18
         version: 18.2.13(rxjs@6.6.7)(zone.js@0.11.8)
@@ -56,6 +59,13 @@ packages:
   '@ampproject/remapping@2.3.0':
     resolution: {integrity: sha512-30iZtAPgz+LTIYoeivqYo853f02jBYSd5uGnGpkFV0M3xOt9aN73erkgYAmZU43x4VfqcnLxW9Kpg3R5LC4YYw==}
     engines: {node: '>=6.0.0'}
+
+  '@angular/common@20.0.0-next.0':
+    resolution: {integrity: sha512-IWjT32qKbhC8Ns6Xz7m6aPUmac7cT+7nUbWzvLGW+eszcC6HspqEaeW64ssNM5MmvaxoMqoBQ5UuB+CrJ47g/w==}
+    engines: {node: ^18.19.1 || ^20.11.1 || >=22.0.0}
+    peerDependencies:
+      '@angular/core': 20.0.0-next.0
+      rxjs: ^6.5.3 || ^7.4.0
 
   '@angular/compiler-cli@12.2.17':
     resolution: {integrity: sha512-gJJlnDr8Fhs6z0hH0Y/5GC1YAgHY+sRh2BUrbDu+nIUubyyOVYSyQdL1jwEfCSIZl1GSg+4b4thU7pp7HtmX8g==}
@@ -1811,6 +1821,12 @@ snapshots:
     dependencies:
       '@jridgewell/gen-mapping': 0.3.8
       '@jridgewell/trace-mapping': 0.3.25
+
+  '@angular/common@20.0.0-next.0(@angular/core@18.2.13(rxjs@6.6.7)(zone.js@0.11.8))(rxjs@6.6.7)':
+    dependencies:
+      '@angular/core': 18.2.13(rxjs@6.6.7)(zone.js@0.11.8)
+      rxjs: 6.6.7
+      tslib: 2.8.1
 
   '@angular/compiler-cli@12.2.17(@angular/compiler@12.2.17)(typescript@4.3.5)':
     dependencies:

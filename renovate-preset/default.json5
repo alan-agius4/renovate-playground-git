@@ -57,6 +57,7 @@
     {
       "groupName": "cross-repo Angular dependencies",
       "followTag": "next",
+      "separateMajorMinor": false,
       "schedule": ["at any time"],
       "matchPackageNames": [
         "@angular/{/,}**",
