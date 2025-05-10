@@ -64,10 +64,10 @@
       "separateMajorMinor": false,
       "schedule": ["at any time"],
       "matchPackageNames": [
-        "angular/**",
-        "@angular/**",
         "@angular-devkit/**",
+        "@angular/**",
         "@schematics/**",
+        "angular/**",
         "ng-packagr"
       ]
     },
@@ -122,11 +122,11 @@
       "enabled": false,
       "matchPackageNames": [
         "@types/node",
+        "node",
+        "npm",
+        "pnpm",
         "rxjs",
         "tslib",
-        "node",
-        "pnpm",
-        "npm",
         "yarn"
       ],
       "matchUpdateTypes": ["major"]
