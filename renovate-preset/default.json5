@@ -17,7 +17,6 @@
   "semanticCommits": "enabled",
   "semanticCommitScope": "",
   "semanticCommitType": "build",
-  "separateMajorMinor": false,
   "labels": ["area: build & ci", "action: review"],
 
   // Exclude updates for Yarn as a local version is managed manually
@@ -75,33 +74,28 @@
     // ============================================================================
     // Dependency-Specific Update Controls
     // ============================================================================
-    // Allow only minor and patch updates for Node and PNPM
+    // Disable major updates for selected dependencies
+    {
+      "enabled": false,
+      "matchDepNames": ["@types/node", "rxjs", "tslib", "node", "pnpm"],
+      "matchUpdateTypes": ["major"]
+    },
+
+    // Keep minor and patch updates separate
+    {
+      "matchPackageNames": ["typescript"],
+      "separateMinorPatch": true
+    },
+
+    // Allow only minor and patch updates
     {
       "groupName": null,
       "matchDepNames": ["node", "pnpm"],
       "matchUpdateTypes": ["minor", "patch"]
     },
-    // Disable major updates for Node and PNPM
-    {
-      "enabled": false,
-      "matchDepNames": ["node", "pnpm"],
-      "matchUpdateTypes": ["major"]
-    },
 
-    // Keep minor and patch updates separate for selected dependencies
-    {
-      "matchPackageNames": ["typescript", "rxjs", "tslib"],
-      "separateMinorPatch": true
-    },
 
-    // Disable major updates for selected dependencies
-    {
-      "enabled": false,
-      "matchPackageNames": ["@types/node", "rxjs", "tslib"],
-      "matchUpdateTypes": ["major"]
-    },
-
-    // Disable both major and minor updates for TypeScript
+    // Disable both major and minor updates
     {
       "enabled": false,
       "matchPackageNames": ["typescript"],
