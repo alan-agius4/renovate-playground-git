@@ -74,7 +74,7 @@
 
     // Disable 'next' tag tracking on non-main branches
     {
-      "matchBaseBranches": ["!/main/"],
+      "matchBaseBranches": ["!main"],
       "followTag": null
     },
 
