@@ -5,7 +5,7 @@
   "engines": {
     "node": "^18.19.1 || ^20.11.1 || >=22.0.0"
   },
-  "packageManager": "pnpm@9.15.6",
+  "packageManager": "pnpm@10.10.0",
   "dependencies": {
     "@angular/core": "^18",
     "@types/jasmine": "~5.1.0",
