@@ -21,7 +21,6 @@
   "semanticCommitType": "build",
   "labels": ["area: build & ci", "action: review"],
 
-  // Maintain lock files regularly to ensure consistency
   "lockFileMaintenance": {
     "enabled": true
   },
