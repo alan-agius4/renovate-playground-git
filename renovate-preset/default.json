@@ -94,6 +94,18 @@
       "matchUpdateTypes": ["major"]
     },
 
+    // Package managers minor and patch updates
+    {
+      "groupName": "pnpm dependency",
+      "matchDepNames": ["pnpm"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "enabled": false,
+      "matchDepNames": ["pnpm"],
+      "matchUpdateTypes": ["major"]
+    },
+
     // Separate minor and patch updates for these dependencies
     {
       "matchPackageNames": ["typescript", "rxjs", "tslib"],
@@ -103,7 +115,7 @@
     // Disable major updates for these dependencies
     {
       "enabled": false,
-      "matchPackageNames": ["@types/node", "rxjs", "tslib", "pnpm"],
+      "matchPackageNames": ["@types/node", "rxjs", "tslib"],
       "matchUpdateTypes": ["major"]
     },
 
