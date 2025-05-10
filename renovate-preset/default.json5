@@ -32,7 +32,7 @@
 
     // Group all non-major updates (minor and patch) together
     {
-      "groupName": "all non-major dependencies",
+      "groupName": "all non-major packages",
       "matchPackageNames": ["*"],
       "matchUpdateTypes": ["digest", "patch", "minor"]
     },
@@ -53,7 +53,7 @@
 
     // Group updates related to Angular ecosystem across repositories
     {
-      "groupName": "cross-repo Angular dependencies",
+      "groupName": "cross-repo angular packages",
       "followTag": "next",
       "separateMajorMinor": false,
       "schedule": ["at any time"],
@@ -97,9 +97,9 @@
       "separateMinorPatch": true
     },
 
-    // Group TypeScript-related dependencies
+    // Group TypeScript-related packages
     {
-      "groupName": "typescript dependencies",
+      "groupName": "typescript packages",
       "matchPackageNames": ["typescript", "tslib"]
     },
 
