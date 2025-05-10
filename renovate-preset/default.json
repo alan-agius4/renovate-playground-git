@@ -1,0 +1,138 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "dependencyDashboard": true,
+  "rangeStrategy": "replace",
+
+  // Scheduling and run configuration
+  "schedule": [
+    "after 10:00pm every weekday",
+    "before 4:00am every weekday",
+    "every weekend"
+  ],
+  "prHourlyLimit": 4,
+  "timezone": "America/Tijuana",
+
+  // Commit and PR configuration
+  "commitBody": "See associated pull request for more information.",
+  "semanticCommits": "enabled",
+  "semanticCommitScope": "",
+  "semanticCommitType": "build",
+  "separateMajorMinor": false,
+  "labels": ["area: build & ci", "action: review"],
+
+  // Exclude Yarn from updates since a local version is used
+  "ignoreDeps": ["yarn"],
+
+  "lockFileMaintenance": {
+    "enabled": true
+  },
+
+  "packageRules": [
+    // ------------------------------------------------------------------------
+    // General Grouping and Update Rules
+    // ------------------------------------------------------------------------
+
+    // Group all minor and patch updates into a single PR
+    {
+      "groupName": "all non-major dependencies",
+      "matchPackageNames": ["*"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+
+    // ------------------------------------------------------------------------
+    // Framework / Ecosystem-Specific Rules
+    // ------------------------------------------------------------------------
+
+    // Group all Bazel-related updates together
+    {
+      "groupName": "bazel",
+      "matchDepNames": ["/^@bazel/.*/"]
+    },
+    {
+      "groupName": "bazel",
+      "matchManagers": ["bazel"]
+    },
+
+    // Group all Angular-related dependencies
+    {
+      "groupName": "cross-repo Angular dependencies",
+      "schedule": ["at any time"],
+      "matchPackageNames": [
+        "@angular/{/,}**",
+        "angular/{/,}**",
+        "@angular-devkit{/,}**",
+        "@schematics/{/,}**",
+        "ng-packagr"
+      ]
+    },
+    // For the 'main' branch, use Angular's 'next' tag for updates
+    {
+      "matchBaseBranches": ["main"],
+      "followTag": "next",
+      "matchPackageNames": [
+        "@angular/{/,}**",
+        "angular/{/,}**",
+        "@angular-devkit{/,}**",
+        "@schematics/{/,}**",
+        "ng-packagr"
+      ]
+    },
+
+    // ------------------------------------------------------------------------
+    // Specific Dependency Update Control
+    // ------------------------------------------------------------------------
+
+    // Node.js-related minor and patch updates
+    {
+      "groupName": "node.js dependency",
+      "matchDepNames": ["node"],
+      "matchUpdateTypes": ["minor", "patch"]
+    },
+    {
+      "enabled": false,
+      "matchDepNames": ["node"],
+      "matchUpdateTypes": ["major"]
+    },
+
+    // Separate minor and patch updates for these dependencies
+    {
+      "matchPackageNames": ["typescript", "rxjs", "tslib"],
+      "separateMinorPatch": true
+    },
+
+    // Disable major updates for these dependencies
+    {
+      "enabled": false,
+      "matchPackageNames": ["@types/node", "rxjs", "tslib", "pnpm"],
+      "matchUpdateTypes": ["major"]
+    },
+
+    // Disable major and minor updates for these dependencies
+    {
+      "enabled": false,
+      "matchPackageNames": ["typescript"],
+      "matchUpdateTypes": ["major", "minor"]
+    },
+
+    // ------------------------------------------------------------------------
+    // Workflow-Specific Rules
+    // ------------------------------------------------------------------------
+
+    // Group dependencies used in the 'scorecard.yml' workflow
+    {
+      "groupName": "scorecard action dependencies",
+      "matchFileNames": [".github/workflows/scorecard.yml"],
+      "matchPackageNames": ["*"]
+    },
+
+    // ------------------------------------------------------------------------
+    // General Disabling Rules
+    // ------------------------------------------------------------------------
+
+    // Disable updates for pre-release versions (e.g., 0.0.0-PLACEHOLDER)
+    {
+      "enabled": false,
+      "matchCurrentVersion": "/^[~^]?0\\.0\\.0-/"
+    }
+  ]
+}
