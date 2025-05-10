@@ -44,7 +44,7 @@
     // Group Bazel updates by package name or manager
     {
       "groupName": "bazel",
-      "matchPackageNames": ["/^@bazel/.*/"]
+      "matchPackageNames": ["@bazel/**"]
     },
     {
       "groupName": "bazel",
@@ -58,10 +58,10 @@
       "separateMajorMinor": false,
       "schedule": ["at any time"],
       "matchPackageNames": [
-        "@angular/{/,}**",
-        "angular/{/,}**",
-        "@angular-devkit{/,}**",
-        "@schematics/{/,}**",
+        "@angular/**",
+        "angular/**",
+        "@angular-devkit/**",
+        "@schematics/**",
         "ng-packagr"
       ]
     },
