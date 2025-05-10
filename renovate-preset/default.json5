@@ -89,7 +89,7 @@
       "matchPackageNames": ["typescript", "tslib"]
     },
 
-    // Ungroup Node.js runtime and package packagers
+    // Ungroup Node.js runtime and package managers
     {
       "groupName": null,
       "matchPackageNames": ["node", "pnpm", "npm", "yarn"]
