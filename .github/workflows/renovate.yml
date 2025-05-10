@@ -31,13 +31,12 @@ jobs:
       # this step.
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
       - uses: angular/dev-infra/github-actions/npm/checkout-and-setup-node@2c7bab7971084f3f1f6f72735099a9591ee5ebcb
-      # TODO: Use pnpm/action-setup for pnpm install once pnpm is the packageManager for this repo
-      - run: yarn --cwd .github/renovate install --immutable
-        shell: bash
-      - name: core
+      - name: corepack
         run: |
           npm install corepack -g
           corepack enable
+      - run: pnpm install --dir .github/renovate
+        shell: bash
 
       - run: .github/renovate/node_modules/.bin/renovate
         env:
