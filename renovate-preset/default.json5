@@ -56,6 +56,7 @@
     // Group updates for Angular ecosystem dependencies
     {
       "groupName": "cross-repo Angular dependencies",
+      "followTag": "next",
       "schedule": ["at any time"],
       "matchPackageNames": [
         "@angular/{/,}**",
