@@ -96,7 +96,6 @@
       "matchUpdateTypes": ["minor", "patch"]
     },
 
-
     // Disable both major and minor updates
     {
       "enabled": false,
@@ -119,7 +118,7 @@
     // General Exclusion Rules
     // ============================================================================
 
-    // Disable updates for placeholder-style pre-release versions
+    // Disable updates for placeholder-style versions
     {
       "enabled": false,
       "matchCurrentVersion": "/^[~^]?0\\.0\\.0-/"
