@@ -1,4 +1,4 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["github>alan-agius4/renovate-playground-git//renovate-preset/default.json"]
+  "extends": ["github>alan-agius4/renovate-playground-git//renovate-preset/default.json5"]
 }
