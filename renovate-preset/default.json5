@@ -32,7 +32,7 @@
 
     // Group all non-major updates (minor and patch) together
     {
-      "groupName": "all non-major packages",
+      "groupName": "all non-major dependencies",
       "matchPackageNames": ["*"],
       "matchUpdateTypes": ["digest", "patch", "minor"]
     },
@@ -43,17 +43,17 @@
 
     // Group Bazel updates by package name or manager
     {
-      "groupName": "bazel packages",
+      "groupName": "bazel dependencies",
       "matchPackageNames": ["@bazel/**"]
     },
     {
-      "groupName": "bazel packages",
+      "groupName": "bazel dependencies",
       "matchManagers": ["bazel"]
     },
 
     // Group updates related to Angular ecosystem across repositories
     {
-      "groupName": "cross-repo angular packages",
+      "groupName": "cross-repo angular dependencies",
       "followTag": "next",
       "separateMajorMinor": false,
       "schedule": ["at any time"],
@@ -99,7 +99,7 @@
 
     // Group TypeScript-related packages
     {
-      "groupName": "typescript packages",
+      "groupName": "typescript dependencies",
       "matchPackageNames": ["typescript", "tslib"]
     },
 
