@@ -38,7 +38,7 @@
         "!node",
         "!pnpm",
         "!npm",
-        "yarn"
+        "!yarn"
       ],
       "matchUpdateTypes": ["digest", "patch", "minor"]
     },
