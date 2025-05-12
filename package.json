@@ -7,7 +7,7 @@
   },
   "packageManager": "pnpm@9.15.6",
   "dependencies": {
-    "@angular/benchpress": "^18",
+    "@angular/benchpress": "~0.2.0",
     "@octokit/auth-app": "^6",
     "@octokit/core": "^5",
     "@angular/core": "^18",
