@@ -127,7 +127,7 @@
     // Disable major updates for specified dependencies
     {
       "enabled": false,
-      "matchPackageNames": [
+      "matchDepNames": [
         "@types/node",
         "bazel",
         "node",
