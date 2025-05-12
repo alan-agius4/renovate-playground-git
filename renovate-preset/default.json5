@@ -55,20 +55,13 @@
     // ============================================================================
 
     // Group updates related to Angular ecosystem across repositories
-    {
+       {
       groupName: 'cross-repo angular dependencies',
       followTag: 'next',
       separateMajorMinor: false,
       schedule: ['at any time'],
-      matchDepName: [
-        '@angular-devkit/**',
-        '@angular/**',
-        '@schematics/**',
-        'ng-packagr',
-      ],
-      matchPackageNames: [
-        'angular/**',
-      ]
+      matchDepNames: ['@angular-devkit/**', '@angular/**', '@schematics/**', 'ng-packagr'],
+      matchPackageNames: ['angular/**'],
     },
 
     // Disable 'next' tag tracking on non-main branches
