@@ -60,13 +60,15 @@
       followTag: 'next',
       separateMajorMinor: false,
       schedule: ['at any time'],
-      matchPackageNames: [
+      matchDepName: [
         '@angular-devkit/**',
         '@angular/**',
         '@schematics/**',
-        'angular/**',
         'ng-packagr',
       ],
+      matchPackageNames: [
+        'angular/**',
+      ]
     },
 
     // Disable 'next' tag tracking on non-main branches
