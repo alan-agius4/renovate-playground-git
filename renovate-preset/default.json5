@@ -129,8 +129,8 @@
       "enabled": false,
       "matchPackageNames": [
         "@types/node",
-        "bazel",
         "node",
+        "bazel",
         "npm",
         "pnpm",
         "rxjs",
