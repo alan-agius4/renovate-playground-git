@@ -60,8 +60,13 @@
       followTag: 'next',
       separateMajorMinor: false,
       schedule: ['at any time'],
-      matchDepNames: ['@angular-devkit/**', '@angular/**', '@schematics/**', 'ng-packagr'],
-      matchPackageNames: ['angular/**'],
+      matchPackageNames: ['@angular-devkit/**', '@angular/**', '@schematics/**','angular/**' 'ng-packagr'],
+    },
+
+// @angular/benchmark is not released as 'next'
+    {
+      followTag: null,
+      matchPackageNames: ['@angular/benchmark'],
     },
 
     // Disable 'next' tag tracking on non-main branches
