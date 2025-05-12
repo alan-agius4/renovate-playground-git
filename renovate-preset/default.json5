@@ -60,7 +60,7 @@
       followTag: 'next',
       separateMajorMinor: false,
       schedule: ['at any time'],
-      matchDepNames: [
+      matchPackageNames: [
         '@angular-devkit/**',
         '@angular/**',
         '@schematics/**',
