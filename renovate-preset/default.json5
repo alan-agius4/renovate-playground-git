@@ -6,9 +6,9 @@
 
   // Schedule Renovate to run during off-peak hours
   "schedule": [
-    "after 10:00pm every weekday",
-    "before 5:00am every weekday",
-    "every weekend"
+    // "after 10:00pm every weekday",
+    // "before 5:00am every weekday",
+    // "every weekend"
   ],
   "prConcurrentLimit": 8,
   "prHourlyLimit": 4,
@@ -24,6 +24,13 @@
   "lockFileMaintenance": {
     "enabled": true
   },
+
+  // Ignored dependencies in all repositories
+  "ignoreDeps": [
+    "build_bazel_rules_nodejs",
+    "rules_pkg",
+    "yarn" // Yarn is copied locally in all repositories where needed.
+  ],
 
   "packageRules": [
     // ============================================================================
@@ -122,6 +129,7 @@
       "enabled": false,
       "matchPackageNames": [
         "@types/node",
+        "bazel",
         "node",
         "npm",
         "pnpm",
