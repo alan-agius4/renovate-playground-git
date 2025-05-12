@@ -66,7 +66,7 @@
 // @angular/benchpress is not released as 'next'
     {
       followTag: null,
-      matchPackageNames: ['@angular/benchpress'],
+      matchDepNames: ['@angular/benchpress'],
     },
 
     // Disable 'next' tag tracking on non-main branches
