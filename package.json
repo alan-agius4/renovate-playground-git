@@ -12,6 +12,7 @@
     "@angular/core": "^18",
     "@angular/common": "20.0.0-next.0",
     "@types/jasmine": "~5.1.0",
+    "quicktype-core": "23.1.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
