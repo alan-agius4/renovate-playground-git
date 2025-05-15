@@ -35,7 +35,7 @@ jobs:
         run: |
           npm install corepack -g
           corepack enable
-      - run: pnpm install --dir .github/renovate
+      - run: yarn install --dir .github/renovate
         shell: bash
 
       - run: .github/renovate/node_modules/.bin/renovate
