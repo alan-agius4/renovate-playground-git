@@ -3,5 +3,5 @@
   "extends": [
     "github>alan-agius4/renovate-playground-git//renovate-preset/default.json5"
   ],
-  "ignorePaths": ["pnpm-workspace.yaml"]
+  "ignorePaths": ["pnpm-workspace.yaml", "pnpm-lock.yaml"]
 }
