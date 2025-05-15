@@ -7,8 +7,8 @@
   },
   "dependencies": {
     "@angular/benchpress": "~0.2.0",
-    "@octokit/auth-app": "^6",
-    "@octokit/core": "^5",
+    "@octokit/auth-app": "^7.0.0",
+    "@octokit/core": "^6.0.0",
     "@angular/core": "^18",
     "@angular/common": "20.0.0-next.0",
     "@types/jasmine": "~5.1.0",
