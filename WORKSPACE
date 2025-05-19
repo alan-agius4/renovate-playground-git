@@ -37,9 +37,9 @@ build_bazel_rules_nodejs_dependencies()
 
 http_archive(
     name = "aspect_rules_js",
-    sha256 = "fbc34d815a0cc52183a1a26732fc0329e26774a51abbe0f26fc9fd2dab6133b4",
-    strip_prefix = "rules_js-2.1.2",
-    url = "https://github.com/aspect-build/rules_js/releases/download/v2.1.2/rules_js-v2.1.2.tar.gz",
+    sha256 = "83e5af4d17385d1c3268c31ae217dbfc8525aa7bcf52508dc6864baffc8b9501",
+    strip_prefix = "rules_js-2.3.7",
+    url = "https://github.com/aspect-build/rules_js/releases/download/v2.3.7/rules_js-v2.3.7.tar.gz",
 )
 
 load("@aspect_rules_js//js:repositories.bzl", "rules_js_dependencies")
@@ -151,9 +151,9 @@ yarn_install(
 
 http_archive(
     name = "aspect_bazel_lib",
-    sha256 = "7b39d9f38b82260a8151b18dd4a6219d2d7fc4a0ac313d4f5a630ae6907d205d",
-    strip_prefix = "bazel-lib-2.10.0",
-    url = "https://github.com/aspect-build/bazel-lib/releases/download/v2.10.0/bazel-lib-v2.10.0.tar.gz",
+    sha256 = "fc8fe1be58ae39f84a8613d554534760c7f0819d407afcc98bbcbd990523bfed",
+    strip_prefix = "bazel-lib-2.16.0",
+    url = "https://github.com/aspect-build/bazel-lib/releases/download/v2.16.0/bazel-lib-v2.16.0.tar.gz",
 )
 
 load("@aspect_bazel_lib//lib:repositories.bzl", "aspect_bazel_lib_dependencies", "aspect_bazel_lib_register_toolchains")
@@ -234,9 +234,9 @@ http_archive(
     name = "aspect_rules_ts",
     patch_args = ["-p1"],
     patches = ["//tools:rules_ts_windows.patch"],
-    sha256 = "013a10b2b457add73b081780e604778eb50a141709f9194298f97761acdcc169",
-    strip_prefix = "rules_ts-3.4.0",
-    url = "https://github.com/aspect-build/rules_ts/releases/download/v3.4.0/rules_ts-v3.4.0.tar.gz",
+    sha256 = "6b15ac1c69f2c0f1282e41ab469fd63cd40eb2e2d83075e19b68a6a76669773f",
+    strip_prefix = "rules_ts-3.6.0",
+    url = "https://github.com/aspect-build/rules_ts/releases/download/v3.6.0/rules_ts-v3.6.0.tar.gz",
 )
 
 load("@aspect_rules_ts//ts:repositories.bzl", "rules_ts_dependencies")
