@@ -47,9 +47,6 @@
       matchDepNames: ["*", "!node", "!pnpm", "!npm", "!yarn"],
       matchUpdateTypes: ["digest", "patch", "minor"],
       postUpgradeTasks: {
-        extends: [
-          "github>alan-agius4/renovate-playground-git//renovate-preset/default2.json5",
-        ],
         commands: ["foo-bar-command222"],
         fileFilters: ["MODULE.bazel.lock"],
         executionMode: "branch",
