@@ -1,5 +1,7 @@
 {
-  commands: ["foo-bar-command3333"],
-  fileFilters: ["MODULE.bazel.lock2"],
-  executionMode: "branch",
+  postUpgradeTasks: {
+    commands: ["foo-bar-command2332"],
+    fileFilters: ["MODULE.bazel.lock"],
+    executionMode: "branch",
+  },
 }
