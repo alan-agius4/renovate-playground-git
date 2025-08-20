@@ -50,7 +50,8 @@
       groupName: "all non-major dependencies",
       matchDepNames: ["*", "!node", "!pnpm", "!npm", "!yarn"],
       matchUpdateTypes: ["digest", "patch", "minor"],
-      postUpgradeTasks: null,},
+      postUpgradeTasks: null,
+    },
 
     // ============================================================================
     // ECOSYSTEM-SPECIFIC GROUPING
