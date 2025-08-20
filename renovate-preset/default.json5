@@ -39,27 +39,21 @@
 
     // Group all non-major updates (minor and patch) together
     {
-      matchUpdateTypes: ["digest", "patch", "minor"],
-      postUpgradeTasks: {
-        commands: [
-          "foo-bar-command-2",
-        ],
-        fileFilters: ["MODULE.bazel.lock"],
-        executionMode: "branch",
-      },
-    },
-
-    {
       groupName: "all non-major dependencies",
       matchDepNames: ["*", "!node", "!pnpm", "!npm", "!yarn"],
       matchUpdateTypes: ["digest", "patch", "minor"],
-      postUpgradeTasks: {
-        commands: [
+      postUpgradeTasks: [
+        {
+          "extends": "github>alan-agius4/renovate-playground-git//renovate-preset/default2.json5"
+        },
+       {
+         commands: [
           "foo-bar-command",
         ],
-        fileFilters: ["MODULE.bazel.lock"],
-        executionMode: "branch",
-      },
+          fileFilters: ["MODULE.bazel.lock"],
+          executionMode: "branch",
+        }
+      ],
     },
 
     // ============================================================================

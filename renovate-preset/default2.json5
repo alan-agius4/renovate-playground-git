@@ -1,0 +1,7 @@
+{
+  postUpgradeTasks: {
+    commands: ["foo-bar-command2"],
+    fileFilters: ["MODULE.bazel.lock"],
+    executionMode: "branch",
+  },
+}
