@@ -87,8 +87,6 @@
     {
       groupName: "all github actions",
       matchManagers: ["github-actions"],
-      // Disable 'postUpdateTasks' for changes that do not effect the BAZEL lockfile or generated files.
-      postUpgradeTasks: { commands: [] },
     },
 
     // ============================================================================
@@ -178,6 +176,12 @@
       enabled: false,
       matchBaseBranches: ["!main"],
       matchUpdateTypes: ["major"],
+    },
+
+    // Disable 'postUpdateTasks' for changes that do not effect the BAZEL lockfile or generated files.
+    {
+      postUpgradeTasks: { commands: [] },
+      matchManagers: ["!npm", "!bazel", "!bazel-module", "!bazelisk"],
     },
   ],
 }
