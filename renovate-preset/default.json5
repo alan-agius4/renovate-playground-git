@@ -1,25 +1,29 @@
 {
-  $schema: 'https://docs.renovatebot.com/renovate-schema.json',
-  extends: ['group:monorepos'],
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  extends: ["group:monorepos"],
   dependencyDashboard: true,
-  rangeStrategy: 'replace',
+  rangeStrategy: "replace",
   automerge: false,
 
   // Temporary workaround for https://github.com/renovatebot/renovate/discussions/30812
   ignoreScripts: false,
 
   // Schedule Renovate to run during off-peak hours
-  schedule: ['after 10:00pm every weekday', 'before 5:00am every weekday', 'every weekend'],
+  schedule: [
+    "after 10:00pm every weekday",
+    "before 5:00am every weekday",
+    "every weekend",
+  ],
   prConcurrentLimit: 8,
   prHourlyLimit: 4,
-  timezone: 'America/Tijuana',
+  timezone: "America/Tijuana",
 
   // Commit and PR customization
-  commitBody: 'See associated pull request for more information.',
-  semanticCommits: 'enabled',
-  semanticCommitScope: '',
-  semanticCommitType: 'build',
-  labels: ['area: build & ci', 'action: merge'],
+  commitBody: "See associated pull request for more information.",
+  semanticCommits: "enabled",
+  semanticCommitScope: "",
+  semanticCommitType: "build",
+  labels: ["area: build & ci", "action: merge"],
 
   lockFileMaintenance: {
     enabled: true,
@@ -32,20 +36,20 @@
 
   // Ignored dependencies in all repositories
   ignoreDeps: [
-    'rules_pkg',
-    'yarn', // Yarn is copied locally in all repositories where needed.
+    "rules_pkg",
+    "yarn", // Yarn is copied locally in all repositories where needed.
   ],
 
   // Renovate does not update Bazel lockfile for the time being.
   // Workaround for https://github.com/renovatebot/renovate/issues/25557
   postUpgradeTasks: {
     commands: [
-      '.npmrc',
-      'pnpm install --frozen-lockfile',
-      'pnpm bazel mod deps --lockfile_mode=update',
+      ".npmrc",
+      "pnpm install --frozen-lockfile",
+      "pnpm bazel mod deps --lockfile_mode=update",
     ],
-    fileFilters: ['MODULE.bazel.lock'],
-    executionMode: 'branch',
+    fileFilters: ["MODULE.bazel.lock"],
+    executionMode: "branch",
   },
 
   packageRules: [
@@ -55,18 +59,17 @@
 
     // Rule to disable updates on branches other than 'main'.
     {
-      'enabled': false,
-      'matchBaseBranches': ['!main'],
-      'matchDepNames': ['!node', '!pnpm', '!npm', '!yarn'],
+      enabled: false,
+      matchBaseBranches: ["!main"],
+      matchDepNames: ["!node", "!pnpm", "!npm", "!yarn"],
     },
 
     // Group all non-major dependencies together for updates on the 'main' branch.
     {
-      'enabled': true,
-      'matchBaseBranches': ['main'],
-      'groupName': 'all non-major dependencies',
-      'matchDepNames': ['*', '!node', '!pnpm', '!npm', '!yarn'],
-      'matchUpdateTypes': ['digest', 'patch', 'minor'],
+      matchBaseBranches: ["main"],
+      groupName: "all non-major dependencies",
+      matchDepNames: ["*", "!node", "!pnpm", "!npm", "!yarn"],
+      matchUpdateTypes: ["digest", "patch", "minor"],
     },
     // ============================================================================
     // ECOSYSTEM-SPECIFIC GROUPING
@@ -74,16 +77,16 @@
 
     // Group Bazel updates
     {
-      enabled: true,
-      groupName: 'bazel dependencies',
-      matchManagers: ['bazel'],
+      groupName: "bazel dependencies",
+      matchManagers: ["bazel"],
     },
 
     // Group GitHub Actions workflow
     {
-      enabled: true,
-      groupName: 'all github actions',
-      matchManagers: ['github-actions'],
+      groupName: "all github actions",
+      matchManagers: ["github-actions"],
+      // Disable 'postUpdateTasks' for changes that do not effect the BAZEL lockfile or generated files.
+      postUpgradeTasks: { commands: [] },
     },
 
     // ============================================================================
@@ -92,54 +95,47 @@
 
     // Group updates related to Angular ecosystem across repositories
     {
-      enabled: true,
-      groupName: 'cross-repo angular dependencies',
-      followTag: 'next',
+      groupName: "cross-repo angular dependencies",
+      followTag: "next",
       separateMajorMinor: false,
-      schedule: ['at any time'],
+      schedule: ["at any time"],
       matchPackageNames: [
-        '@angular-devkit/**',
-        '@angular/**',
-        '@schematics/**',
-        'angular/**',
-        'ng-packagr',
+        "@angular-devkit/**",
+        "@angular/**",
+        "@schematics/**",
+        "angular/**",
+        "ng-packagr",
       ],
     },
 
     // @angular/benchpress is not released as 'next'
     {
       followTag: null,
-      matchDepNames: ['@angular/benchpress'],
-    },
-
-    // Disable 'postUpdateTasks' for changes that do not effect the BAZEL lock files or generated files.
-    {
-      matchManagers: ['github-actions'],
-      postUpgradeTasks: null,
+      matchDepNames: ["@angular/benchpress"],
     },
 
     // Disable 'next' tag tracking on non-main branches
     {
-      matchBaseBranches: ['!main'],
+      matchBaseBranches: ["!main"],
       followTag: null,
     },
 
     // Keep minor and patch updates separate for TypeScript
     {
-      matchDepNames: ['typescript'],
+      matchDepNames: ["typescript"],
       separateMinorPatch: true,
     },
 
     // Group TypeScript-related packages
     {
-      groupName: 'typescript dependencies',
-      matchDepNames: ['typescript', 'tslib'],
+      groupName: "typescript dependencies",
+      matchDepNames: ["typescript", "tslib"],
     },
 
     // Limit how many times these packages get updated (They deploy each merged PR)
     {
-      matchDepNames: ['renovate', 'quicktype-core', 'google-closure-compiler'],
-      schedule: ['on sunday and wednesday'],
+      matchDepNames: ["renovate", "quicktype-core", "google-closure-compiler"],
+      schedule: ["on sunday and wednesday"],
     },
 
     // ============================================================================
@@ -149,36 +145,36 @@
     // Disable updates for placeholder or 0.0.0-style versions
     {
       enabled: false,
-      matchCurrentVersion: '/^[~^]?0\\.0\\.0-/',
+      matchCurrentVersion: "/^[~^]?0\\.0\\.0-/",
     },
 
     // Disable major updates for specified dependencies
     {
       enabled: false,
       matchDepNames: [
-        '@types/node',
-        'node',
-        'bazel', // bazelisk bazel version
-        'npm',
-        'rxjs',
-        'tslib',
-        'yarn',
+        "@types/node",
+        "node",
+        "bazel", // bazelisk bazel version
+        "npm",
+        "rxjs",
+        "tslib",
+        "yarn",
       ],
-      matchUpdateTypes: ['major'],
+      matchUpdateTypes: ["major"],
     },
 
     // Disable TypeScript major and minor updates
     {
       enabled: false,
-      matchDepNames: ['typescript'],
-      matchUpdateTypes: ['major', 'minor'],
+      matchDepNames: ["typescript"],
+      matchUpdateTypes: ["major", "minor"],
     },
 
     // Rule to disable major updates on branches other than 'main'.
     {
-      'enabled': false,
-      'matchBaseBranches': ['!main'],
-      'matchUpdateTypes': ['major'],
+      enabled: false,
+      matchBaseBranches: ["!main"],
+      matchUpdateTypes: ["major"],
     },
   ],
 }
