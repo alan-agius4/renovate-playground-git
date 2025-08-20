@@ -42,10 +42,8 @@
       groupName: "all non-major dependencies",
       matchDepNames: ["*", "!node", "!pnpm", "!npm", "!yarn"],
       matchUpdateTypes: ["digest", "patch", "minor"],
+      "extends": "github>alan-agius4/renovate-playground-git//renovate-preset/default2.json5",
       postUpgradeTasks: [
-        {
-          "extends": "github>alan-agius4/renovate-playground-git//renovate-preset/default2.json5"
-        },
        {
          commands: [
           "foo-bar-command",
