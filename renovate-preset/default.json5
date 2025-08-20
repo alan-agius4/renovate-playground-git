@@ -57,9 +57,11 @@
     // GENERAL GROUPING & UPDATE BEHAVIOR
     // ============================================================================
     // Rule to disable NPM updates on branches other than 'main'.
+    // But allow updating engines and packageManagers.
     {
       enabled: false,
       matchBaseBranches: ["!main"],
+      matchDepNames: ["!node", "!pnpm", "!npm", "!yarn"],
       matchManagers: ["npm"],
     },
 
