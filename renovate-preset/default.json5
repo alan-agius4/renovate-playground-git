@@ -44,7 +44,7 @@
   // Workaround for https://github.com/renovatebot/renovate/issues/25557
   postUpgradeTasks: {
     commands: [
-      ".npmrc",
+      "git restore .npmrc || true",
       "pnpm install --frozen-lockfile",
       "pnpm bazel mod deps --lockfile_mode=update",
     ],
