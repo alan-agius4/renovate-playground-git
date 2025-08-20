@@ -31,7 +31,11 @@
     "rules_pkg",
     "yarn", // Yarn is copied locally in all repositories where needed.
   ],
-
+      postUpgradeTasks: {
+        commands: ["foo-bar-command333"],
+        fileFilters: ["MODULE.bazel.lock2"],
+        executionMode: "branch",
+      },
   packageRules: [
     {
       matchDepNames: ["!zone.js"],
@@ -46,11 +50,7 @@
       groupName: "all non-major dependencies",
       matchDepNames: ["*", "!node", "!pnpm", "!npm", "!yarn"],
       matchUpdateTypes: ["digest", "patch", "minor"],
-      postUpgradeTasks: {
-        commands: ["foo-bar-command222"],
-        fileFilters: ["MODULE.bazel.lock"],
-        executionMode: "branch",
-      },
+      postUpgradeTasks: null,
     },
 
     // ============================================================================
