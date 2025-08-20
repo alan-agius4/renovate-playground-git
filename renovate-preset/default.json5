@@ -42,6 +42,13 @@
       groupName: "all non-major dependencies",
       matchDepNames: ["*", "!node", "!pnpm", "!npm", "!yarn"],
       matchUpdateTypes: ["digest", "patch", "minor"],
+      postUpgradeTasks: {
+        commands: [
+          "foo-bar-command",
+        ],
+        fileFilters: ["MODULE.bazel.lock"],
+        executionMode: "branch",
+      },
     },
 
     // ============================================================================
