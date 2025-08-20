@@ -1,5 +1,5 @@
- {
-    commands: ["foo-bar-command3333"],
-    fileFilters: ["MODULE.bazel.lock2"],
-    executionMode: "branch",
-  },
+{
+  commands: ["foo-bar-command3333"],
+  fileFilters: ["MODULE.bazel.lock2"],
+  executionMode: "branch",
+}
