@@ -50,7 +50,7 @@
         extends: [
           "github>alan-agius4/renovate-playground-git//renovate-preset/default2.json5",
         ],
-        commands: ["foo-bar-command22"],
+        commands: ["foo-bar-command222"],
         fileFilters: ["MODULE.bazel.lock"],
         executionMode: "branch",
       },
