@@ -47,11 +47,6 @@
       matchDepNames: ["*", "!node", "!pnpm", "!npm", "!yarn"],
       matchUpdateTypes: ["digest", "patch", "minor"],
       postUpgradeTasks: [
-        {
-          commands: ["foo-bar-command2"],
-          fileFilters: ["MODULE.bazel.lock"],
-          executionMode: "branch",
-        },
        {
          commands: [
           "foo-bar-command",
