@@ -5,10 +5,4 @@
     "github>alan-agius4/renovate-playground-git//renovate-preset/default.json5"
   ],
   "ignorePaths": ["pnpm-workspace.yaml", "pnpm-lock.yaml"],
-
-  "postUpgradeTasks": {
-    "commands": ["foo-bar-command2222222"],
-    "fileFilters": ["MODULE.bazel.lock2"],
-    "executionMode": "branch"
-  }
 }
