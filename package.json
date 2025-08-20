@@ -10,7 +10,7 @@
     "@octokit/auth-app": "^6",
     "@octokit/core": "^5",
     "@angular/core": "^20.0.0-rc",
-    "@angular/common": "20.0.0-rc.1",
+    "@angular/common": "20.1.7",
     "@types/jasmine": "~5.1.0",
     "quicktype-core": "23.1.0",
     "@types/node": "^12.11.1",
