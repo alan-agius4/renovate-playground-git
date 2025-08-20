@@ -1,14 +1,5 @@
-{
-  packageRules: [
-    {
-      matchDepNames: ["*"],
-      postUpgradeTasks: [
-        {
-          commands: ["foo-bar-command3333"],
-          fileFilters: ["MODULE.bazel.lock"],
-          executionMode: "branch",
-        },
-      ],
-    },
-  ],
-}
+ {
+    commands: ["foo-bar-command3333"],
+    fileFilters: ["MODULE.bazel.lock2"],
+    executionMode: "branch",
+  },
