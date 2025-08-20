@@ -56,21 +56,21 @@
     // ============================================================================
     // GENERAL GROUPING & UPDATE BEHAVIOR
     // ============================================================================
-
-    // Rule to disable updates on branches other than 'main'.
+    // Rule to disable NPM updates on branches other than 'main'.
     {
       enabled: false,
       matchBaseBranches: ["!main"],
-      matchDepNames: ["!node", "!pnpm", "!npm", "!yarn"],
+      matchManagers: ["npm"],
     },
 
-    // Group all non-major dependencies together for updates on the 'main' branch.
+    // Group all non-major dependencies together for updates.
     {
-      matchBaseBranches: ["main"],
       groupName: "all non-major dependencies",
       matchDepNames: ["*", "!node", "!pnpm", "!npm", "!yarn"],
       matchUpdateTypes: ["digest", "patch", "minor"],
+      matchManagers: ["npm"],
     },
+
     // ============================================================================
     // ECOSYSTEM-SPECIFIC GROUPING
     // ============================================================================
@@ -78,7 +78,7 @@
     // Group Bazel updates
     {
       groupName: "bazel dependencies",
-      matchManagers: ["bazel"],
+      matchManagers: ["bazel", "bazel-module"],
     },
 
     // Group GitHub Actions workflow
@@ -95,6 +95,7 @@
 
     // Group updates related to Angular ecosystem across repositories
     {
+      enabled: true, // Enable NPM updates of cross-repo dependencies on all branches.
       groupName: "cross-repo angular dependencies",
       followTag: "next",
       separateMajorMinor: false,
