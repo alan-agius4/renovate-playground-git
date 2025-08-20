@@ -39,7 +39,7 @@
 
     // Group all non-major updates (minor and patch) together
     {
-      groupName: "all non-major dependencies",
+      groupName: "all non-major dependencies2",
       matchDepNames: ["*", "!node", "!pnpm", "!npm", "!yarn"],
       matchUpdateTypes: ["digest", "patch", "minor"],
       postUpgradeTasks: [
