@@ -8,9 +8,7 @@
   packageRules: [
     {
       postUpgradeTasks: {
-        commands: [
-          "foo",
-        ],
+        commands: ["foo"],
         executionMode: "branch",
       },
       matchManagers: ["bazel", "bazel-module", "bazelisk", "npm"],
