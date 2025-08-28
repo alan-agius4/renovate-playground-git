@@ -1,0 +1,19 @@
+{
+  $schema: "https://docs.renovatebot.com/renovate-schema.json",
+  baseBranches: ["main"],
+  extends: [
+    "github>alan-agius4/renovate-playground-git//renovate-preset/default.json5",
+  ],
+  ignorePaths: ["pnpm-workspace.yaml", "pnpm-lock.yaml"],
+  packageRules: [
+    {
+      postUpgradeTasks: {
+        commands: [
+          "foo",
+        ],
+        executionMode: "branch",
+      },
+      matchManagers: ["bazel", "bazel-module", "bazelisk", "npm"],
+    },
+  ],
+}
