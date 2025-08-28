@@ -49,7 +49,7 @@
     {
       postUpgradeTasks: {
         commands: [
-          "var"
+          "var",
           "git restore .npmrc || true", // In case `.npmrc` avoid a hard error.
           "pnpm install --frozen-lockfile",
           "pnpm bazel mod deps --lockfile_mode=update",
