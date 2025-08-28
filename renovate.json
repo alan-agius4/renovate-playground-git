@@ -1,9 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "baseBranches": ["main", "dev"],
+  "baseBranches": ["main"],
   "extends": [
     "github>alan-agius4/renovate-playground-git//renovate-preset/default.json5"
   ],
-  "ignorePaths": ["pnpm-workspace.yaml", "pnpm-lock.yaml"]
-
+  "ignorePaths": ["pnpm-workspace.yaml", "pnpm-lock.yaml"],
+  "postUpgradeTasks": {
+    "commands": [
+      "coo"
+    ],
+    "executionMode": "branch"
+  }
 }
