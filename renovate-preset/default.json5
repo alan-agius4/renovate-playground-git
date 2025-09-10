@@ -1,6 +1,6 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
-  extends: ["group:monorepos"],
+  extends: ["group:monorepos","mergeConfidence:all-badges"],
   dependencyDashboard: true,
   rangeStrategy: "replace",
   automerge: false,
