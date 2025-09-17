@@ -8,12 +8,11 @@
   },
   "dependencies": {
     "@angular/benchpress": "~0.3.0",
+    "@angular/common": "20.0.0-rc.1",
+    "@angular/core": "^20.0.0-rc",
     "@octokit/auth-app": "^6",
     "@octokit/core": "^5",
-    "@angular/core": "^20.0.0-rc",
-    "@angular/common": "20.0.0-rc.1",
     "@types/jasmine": "~5.1.0",
-    "quicktype-core": "23.1.0",
     "@types/node": "^12.11.1",
     "jasmine-core": "~3.8.0",
     "karma": "~6.3.0",
@@ -22,9 +21,11 @@
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~2.1.0",
     "ng-packagr": "^20.0.0-rc",
+    "quicktype-core": "23.1.0",
     "rxjs": "~6.6.0",
     "tslib": "^2.3.0",
     "typescript": "~5.0.1",
+    "zod": "^4.1.9",
     "zone.js": "~0.11.4"
   },
   "pnpm": {
