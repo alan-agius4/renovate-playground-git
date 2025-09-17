@@ -45,7 +45,7 @@
     // GENERAL GROUPING & UPDATE BEHAVIOR
     // ============================================================================
 
-    // Disable 'postUpdateTasks' for changes that do not effect the BAZEL lockfile or generated files.
+    // Enable 'postUpdateTasks' for changes that effect the BAZEL lockfile or generated files.
     {
       postUpgradeTasks: {
         commands: [
