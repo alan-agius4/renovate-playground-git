@@ -73,6 +73,7 @@
       groupName: "all non-major dependencies",
       matchDepNames: ["*", "!node", "!pnpm", "!npm", "!yarn"],
       matchUpdateTypes: ["digest", "patch", "minor"],
+      minimumReleaseAge: "1440 minutes",
       matchManagers: ["npm"],
     },
 

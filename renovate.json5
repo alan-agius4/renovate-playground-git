@@ -5,13 +5,4 @@
     "github>alan-agius4/renovate-playground-git//renovate-preset/default.json5",
   ],
   ignorePaths: ["pnpm-workspace.yaml", "pnpm-lock.yaml"],
-  packageRules: [
-    {
-      postUpgradeTasks: {
-        commands: ["foo2"],
-        executionMode: "branch",
-      },
-      matchManagers: ["bazel", "bazel-module", "bazelisk", "npm"],
-    },
-  ],
 }

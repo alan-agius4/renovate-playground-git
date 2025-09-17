@@ -1,5 +1,0 @@
-{
-    commands: ["foo-bar-command2332"],
-    fileFilters: ["MODULE.bazel.lock"],
-    executionMode: "branch",
-}
