@@ -10,13 +10,13 @@ importers:
     dependencies:
       '@angular/benchpress':
         specifier: ~0.3.0
-        version: 0.3.0(rxjs@6.6.7)(zone.js@0.11.8)
+        version: 0.3.0(rxjs@6.6.7)(zone.js@0.15.1)
       '@angular/common':
         specifier: 20.0.0-rc.1
-        version: 20.0.0-rc.1(@angular/core@20.3.0(@angular/compiler@20.3.0)(rxjs@6.6.7)(zone.js@0.11.8))(rxjs@6.6.7)
+        version: 20.0.0-rc.1(@angular/core@20.3.0(@angular/compiler@20.3.0)(rxjs@6.6.7)(zone.js@0.15.1))(rxjs@6.6.7)
       '@angular/core':
         specifier: ^20.0.0-rc
-        version: 20.3.0(@angular/compiler@20.3.0)(rxjs@6.6.7)(zone.js@0.11.8)
+        version: 20.3.0(@angular/compiler@20.3.0)(rxjs@6.6.7)(zone.js@0.15.1)
       '@octokit/auth-app':
         specifier: ^6
         version: 6.1.4
@@ -30,29 +30,29 @@ importers:
         specifier: ^12.11.1
         version: 12.20.55
       jasmine-core:
-        specifier: ~3.8.0
-        version: 3.8.0
+        specifier: ~3.99.0
+        version: 3.99.1
       karma:
-        specifier: ~6.3.0
-        version: 6.3.20
+        specifier: ~6.4.0
+        version: 6.4.4
       karma-chrome-launcher:
-        specifier: ~3.1.0
-        version: 3.1.1
+        specifier: ~3.2.0
+        version: 3.2.0
       karma-coverage:
-        specifier: ~2.0.3
-        version: 2.0.3
+        specifier: ~2.2.0
+        version: 2.2.1
       karma-jasmine:
         specifier: ~4.0.0
-        version: 4.0.2(karma@6.3.20)
+        version: 4.0.2(karma@6.4.4)
       karma-jasmine-html-reporter:
         specifier: ~2.1.0
-        version: 2.1.0(jasmine-core@3.8.0)(karma-jasmine@4.0.2(karma@6.3.20))(karma@6.3.20)
+        version: 2.1.0(jasmine-core@3.99.1)(karma-jasmine@4.0.2(karma@6.4.4))(karma@6.4.4)
       ng-packagr:
         specifier: ^20.0.0-rc
         version: 20.3.0(@angular/compiler-cli@20.3.0(@angular/compiler@20.3.0)(typescript@5.0.4))(tslib@2.8.1)(typescript@5.0.4)
       quicktype-core:
-        specifier: 23.1.0
-        version: 23.1.0
+        specifier: 23.2.6
+        version: 23.2.6
       rxjs:
         specifier: ~6.6.0
         version: 6.6.7
@@ -63,11 +63,11 @@ importers:
         specifier: ~5.0.1
         version: 5.0.4
       zod:
-        specifier: 4.1.8
-        version: 4.1.8
+        specifier: 4.1.9
+        version: 4.1.9
       zone.js:
-        specifier: ~0.11.4
-        version: 0.11.8
+        specifier: ~0.15.0
+        version: 0.15.1
 
 packages:
 
@@ -1311,8 +1311,8 @@ packages:
     resolution: {integrity: sha512-O8dpsF+r0WV/8MNRKfnmrtCWhuKjxrq2w+jpzBL5UZKTi2LeVWnWOmWRxFlesJONmc+wLAGvKQZEOanko0LFTg==}
     engines: {node: '>=8'}
 
-  istanbul-lib-instrument@4.0.3:
-    resolution: {integrity: sha512-BXgQl9kf4WTCPCCpmFGoJkz/+uhvm7h7PFKUYxh7qarQd3ER33vHG//qaE8eN25l07YqZPpHXU9I09l/RD5aGQ==}
+  istanbul-lib-instrument@5.2.1:
+    resolution: {integrity: sha512-pzqtp31nLv/XFOzXGuvhCb8qhjmTVo5vjVk19XE4CRlSWz0KoeJ3bw9XsA7nOp9YBf4qHjwBxkDzKcME/J29Yg==}
     engines: {node: '>=8'}
 
   istanbul-lib-report@3.0.1:
@@ -1327,8 +1327,8 @@ packages:
     resolution: {integrity: sha512-HGYWWS/ehqTV3xN10i23tkPkpH46MLCIMFNCaaKNavAXTF1RkqxawEPtnjnGZ6XKSInBKkiOA5BKS+aZiY3AvA==}
     engines: {node: '>=8'}
 
-  jasmine-core@3.8.0:
-    resolution: {integrity: sha512-zl0nZWDrmbCiKns0NcjkFGYkVTGCPUgoHypTaj+G2AzaWus7QGoXARSlYsSle2VRpSdfJmM+hzmFKzQNhF2kHg==}
+  jasmine-core@3.99.1:
+    resolution: {integrity: sha512-Hu1dmuoGcZ7AfyynN3LsfruwMbxMALMka+YtZeGoLuDEySVmVAPaonkNoBRIw/ectu8b9tVQCJNgp4a4knp+tg==}
 
   js-base64@3.7.8:
     resolution: {integrity: sha512-hNngCeKxIUQiEUN3GPJOkz4wF/YvdUdbNL9hsBcMQTkKzboD7T/q3OYOuuPZLUE6dBxSGpwhk5mwuDud7JVAow==}
@@ -1365,11 +1365,11 @@ packages:
   jws@3.2.2:
     resolution: {integrity: sha512-YHlZCB6lMTllWDtSPHz/ZXTsi8S00usEV6v1tjq8tOUZzw7DpSDWVXjXDre6ed1w/pd495ODpHZYSdkRTsa0HA==}
 
-  karma-chrome-launcher@3.1.1:
-    resolution: {integrity: sha512-hsIglcq1vtboGPAN+DGCISCFOxW+ZVnIqhDQcCMqqCp+4dmJ0Qpq5QAjkbA0X2L9Mi6OBkHi2Srrbmm7pUKkzQ==}
+  karma-chrome-launcher@3.2.0:
+    resolution: {integrity: sha512-rE9RkUPI7I9mAxByQWkGJFXfFD6lE4gC5nPuZdobf/QdTEJI6EU4yIay/cfU/xV4ZxlM5JiTv7zWYgA64NpS5Q==}
 
-  karma-coverage@2.0.3:
-    resolution: {integrity: sha512-atDvLQqvPcLxhED0cmXYdsPMCQuh6Asa9FMZW1bhNqlVEhJoB9qyZ2BY1gu7D/rr5GLGb5QzYO4siQskxaWP/g==}
+  karma-coverage@2.2.1:
+    resolution: {integrity: sha512-yj7hbequkQP2qOSb20GuNSIyE//PgJWHwC2IydLE6XRtsnaflv+/OSGNssPjobYUlhVVagy99TQpqUt3vAUG7A==}
     engines: {node: '>=10.0.0'}
 
   karma-jasmine-html-reporter@2.1.0:
@@ -1385,8 +1385,8 @@ packages:
     peerDependencies:
       karma: '*'
 
-  karma@6.3.20:
-    resolution: {integrity: sha512-HRNQhMuKOwKpjYlWiJP0DUrJOh+QjaI/DTaD8b9rEm4Il3tJ8MijutVZH4ts10LuUFst/CedwTS6vieCN8yTSw==}
+  karma@6.4.4:
+    resolution: {integrity: sha512-LrtUxbdvt1gOpo3gxG+VAJlJAEMhbWlM4YrFQgql98FwF7+K8K12LYO4hnDdUkNjeztYrOXEMqgTajSWgmtI/w==}
     engines: {node: '>= 10'}
     hasBin: true
 
@@ -1631,8 +1631,8 @@ packages:
     resolution: {integrity: sha512-+38qI9SOr8tfZ4QmJNplMUxqjbe7LKvvZgWdExBOmd+egZTtjLB67Gu0HRX3u/XOq7UU2Nx6nsjvS16Z9uwfpg==}
     engines: {node: '>=0.6'}
 
-  quicktype-core@23.1.0:
-    resolution: {integrity: sha512-ZcIL85T5fvDHbkM6fhxYoJlPEeX3QCBmw3S2pDsn01pSZeoWetgsZ8jNml5iHMf4tjmxp/s6KshZD43kC4Jo2A==}
+  quicktype-core@23.2.6:
+    resolution: {integrity: sha512-asfeSv7BKBNVb9WiYhFRBvBZHcRutPRBwJMxW0pefluK4kkKu4lv0IvZBwFKvw2XygLcL1Rl90zxWDHYgkwCmA==}
 
   range-parser@1.2.1:
     resolution: {integrity: sha512-Hrgsx+orqoygnmhFbKaHE6c296J+HTAQXoxEF6gNupROmmGJRoyzfG3ccAveqCBrwr/2yxQ5BVd/GTl5agOwSg==}
@@ -1960,11 +1960,11 @@ packages:
     resolution: {integrity: sha512-4UEqdc2RYGHZc7Doyqkrqiln3p9X2DZVxaGbwhn2pi7MrRagKaOcIKe8L3OxYcbhXLgLFUS3zAYuQjKBQgmuNg==}
     engines: {node: ^20.19.0 || ^22.12.0 || >=23}
 
-  zod@4.1.8:
-    resolution: {integrity: sha512-5R1P+WwQqmmMIEACyzSvo4JXHY5WiAFHRMg+zBZKgKS+Q1viRa0C1hmUKtHltoIFKtIdki3pRxkmpP74jnNYHQ==}
+  zod@4.1.9:
+    resolution: {integrity: sha512-HI32jTq0AUAC125z30E8bQNz0RQ+9Uc+4J7V97gLYjZVKRjeydPgGt6dvQzFrav7MYOUGFqqOGiHpA/fdbd0cQ==}
 
-  zone.js@0.11.8:
-    resolution: {integrity: sha512-82bctBg2hKcEJ21humWIkXRlLBBmrc3nN7DFh5LGGhcyycO2S7FN8NmdvlcKaGFDNVL4/9kFLmwmInTavdJERA==}
+  zone.js@0.15.1:
+    resolution: {integrity: sha512-XE96n56IQpJM7NAoXswY3XRLcWFW83xe0BiAOeMD7K5k5xecOeul3Qcpx6GqEeeHNkW5DWL5zOyTbEfB4eti8w==}
 
 snapshots:
 
@@ -1973,17 +1973,17 @@ snapshots:
       '@jridgewell/gen-mapping': 0.3.13
       '@jridgewell/trace-mapping': 0.3.31
 
-  '@angular/benchpress@0.3.0(rxjs@6.6.7)(zone.js@0.11.8)':
+  '@angular/benchpress@0.3.0(rxjs@6.6.7)(zone.js@0.15.1)':
     dependencies:
-      '@angular/core': 14.3.0(rxjs@6.6.7)(zone.js@0.11.8)
+      '@angular/core': 14.3.0(rxjs@6.6.7)(zone.js@0.15.1)
       reflect-metadata: 0.1.14
     transitivePeerDependencies:
       - rxjs
       - zone.js
 
-  '@angular/common@20.0.0-rc.1(@angular/core@20.3.0(@angular/compiler@20.3.0)(rxjs@6.6.7)(zone.js@0.11.8))(rxjs@6.6.7)':
+  '@angular/common@20.0.0-rc.1(@angular/core@20.3.0(@angular/compiler@20.3.0)(rxjs@6.6.7)(zone.js@0.15.1))(rxjs@6.6.7)':
     dependencies:
-      '@angular/core': 20.3.0(@angular/compiler@20.3.0)(rxjs@6.6.7)(zone.js@0.11.8)
+      '@angular/core': 20.3.0(@angular/compiler@20.3.0)(rxjs@6.6.7)(zone.js@0.15.1)
       rxjs: 6.6.7
       tslib: 2.8.1
 
@@ -2007,19 +2007,19 @@ snapshots:
     dependencies:
       tslib: 2.8.1
 
-  '@angular/core@14.3.0(rxjs@6.6.7)(zone.js@0.11.8)':
+  '@angular/core@14.3.0(rxjs@6.6.7)(zone.js@0.15.1)':
     dependencies:
       rxjs: 6.6.7
       tslib: 2.8.1
-      zone.js: 0.11.8
+      zone.js: 0.15.1
 
-  '@angular/core@20.3.0(@angular/compiler@20.3.0)(rxjs@6.6.7)(zone.js@0.11.8)':
+  '@angular/core@20.3.0(@angular/compiler@20.3.0)(rxjs@6.6.7)(zone.js@0.15.1)':
     dependencies:
       rxjs: 6.6.7
       tslib: 2.8.1
     optionalDependencies:
       '@angular/compiler': 20.3.0
-      zone.js: 0.11.8
+      zone.js: 0.15.1
 
   '@babel/code-frame@7.27.1':
     dependencies:
@@ -3088,9 +3088,10 @@ snapshots:
 
   istanbul-lib-coverage@3.2.2: {}
 
-  istanbul-lib-instrument@4.0.3:
+  istanbul-lib-instrument@5.2.1:
     dependencies:
       '@babel/core': 7.28.4
+      '@babel/parser': 7.28.4
       '@istanbuljs/schema': 0.1.3
       istanbul-lib-coverage: 3.2.2
       semver: 6.3.1
@@ -3116,7 +3117,7 @@ snapshots:
       html-escaper: 2.0.2
       istanbul-lib-report: 3.0.1
 
-  jasmine-core@3.8.0: {}
+  jasmine-core@3.99.1: {}
 
   js-base64@3.7.8: {}
 
@@ -3158,14 +3159,14 @@ snapshots:
       jwa: 1.4.2
       safe-buffer: 5.2.1
 
-  karma-chrome-launcher@3.1.1:
+  karma-chrome-launcher@3.2.0:
     dependencies:
       which: 1.3.1
 
-  karma-coverage@2.0.3:
+  karma-coverage@2.2.1:
     dependencies:
       istanbul-lib-coverage: 3.2.2
-      istanbul-lib-instrument: 4.0.3
+      istanbul-lib-instrument: 5.2.1
       istanbul-lib-report: 3.0.1
       istanbul-lib-source-maps: 4.0.1
       istanbul-reports: 3.2.0
@@ -3173,18 +3174,18 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  karma-jasmine-html-reporter@2.1.0(jasmine-core@3.8.0)(karma-jasmine@4.0.2(karma@6.3.20))(karma@6.3.20):
+  karma-jasmine-html-reporter@2.1.0(jasmine-core@3.99.1)(karma-jasmine@4.0.2(karma@6.4.4))(karma@6.4.4):
     dependencies:
-      jasmine-core: 3.8.0
-      karma: 6.3.20
-      karma-jasmine: 4.0.2(karma@6.3.20)
+      jasmine-core: 3.99.1
+      karma: 6.4.4
+      karma-jasmine: 4.0.2(karma@6.4.4)
 
-  karma-jasmine@4.0.2(karma@6.3.20):
+  karma-jasmine@4.0.2(karma@6.4.4):
     dependencies:
-      jasmine-core: 3.8.0
-      karma: 6.3.20
+      jasmine-core: 3.99.1
+      karma: 6.4.4
 
-  karma@6.3.20:
+  karma@6.4.4:
     dependencies:
       '@colors/colors': 1.5.0
       body-parser: 1.20.3
@@ -3446,7 +3447,7 @@ snapshots:
     dependencies:
       side-channel: 1.1.0
 
-  quicktype-core@23.1.0:
+  quicktype-core@23.2.6:
     dependencies:
       '@glideapps/ts-necessities': 2.2.3
       browser-or-node: 3.0.0
@@ -3811,8 +3812,6 @@ snapshots:
       y18n: 5.0.8
       yargs-parser: 22.0.0
 
-  zod@4.1.8: {}
+  zod@4.1.9: {}
 
-  zone.js@0.11.8:
-    dependencies:
-      tslib: 2.8.1
+  zone.js@0.15.1: {}
