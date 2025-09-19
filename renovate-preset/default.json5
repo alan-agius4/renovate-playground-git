@@ -49,10 +49,7 @@
     {
       postUpgradeTasks: {
         commands: [
-          "var",
-          "git restore .npmrc || true", // In case `.npmrc` avoid a hard error.
-          "pnpm install --frozen-lockfile",
-          "pnpm bazel mod deps --lockfile_mode=update",
+          "bazel mod deps --lockfile_mode=update",
         ],
         executionMode: "branch",
       },
@@ -73,7 +70,6 @@
       groupName: "all non-major dependencies",
       matchDepNames: ["*", "!node", "!pnpm", "!npm", "!yarn"],
       matchUpdateTypes: ["digest", "patch", "minor"],
-      minimumReleaseAge: "1440 minutes",
       matchManagers: ["npm"],
     },
 
@@ -104,6 +100,12 @@
       followTag: "next",
       separateMajorMinor: false,
       schedule: ["at any time"],
+      postUpgradeTasks: {
+        commands: [
+          "bazel mod deps --lockfile_mode=update",
+        ],
+        executionMode: "branch",
+      },
       matchPackageNames: [
         "@angular-devkit/**",
         "@angular/**",
