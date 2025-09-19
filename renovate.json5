@@ -1,8 +1,34 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
-  baseBranches: ["main"],
-  extends: [
-    "github>alan-agius4/renovate-playground-git//renovate-preset/default.json5",
+  dependencyDashboard: true,
+  rangeStrategy: "replace",
+  packageRules: [
+    {
+      postUpgradeTasks: {
+        commands: [
+          "Failed PostTask",
+        ],
+        executionMode: "branch",
+      },
+      matchManagers: ["bazel", "bazel-module", "bazelisk"],
+    },
+
+    // Group Bazel updates
+    {
+      groupName: "bazel dependencies",
+      matchManagers: ["bazel", "bazel-module"],
+    },
+    {
+      enabled: true, // Enable NPM updates of cross-repo dependencies on all branches.
+      groupName: "cross-repo angular dependencies",
+      followTag: "next",
+      minimumReleaseAge: null,
+      separateMajorMinor: false,
+      schedule: ["at any time"],
+      matchPackageNames: [
+        "@angular/**",
+        "angular/**",
+      ],
+    },
   ],
-  ignorePaths: ["pnpm-workspace.yaml", "pnpm-lock.yaml"],
 }
