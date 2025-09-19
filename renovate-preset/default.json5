@@ -48,7 +48,7 @@
           'pnpm install --frozen-lockfile',
           'pnpm bazel mod deps --lockfile_mode=update',
         ],
-        executionMode: 'branch',
+        executionMode: 'update',
       },
       matchManagers: ['bazel', 'bazel-module', 'bazelisk'],
     },
