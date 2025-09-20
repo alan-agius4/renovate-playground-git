@@ -78,7 +78,7 @@
     // This rule only affects direct dependencies.
     {
       minimumReleaseAge: '1 day',
-      matchDatasources: ['npm'],
+      matchManagers: ['npm'],
     },
 
     // Group Bazel updates
