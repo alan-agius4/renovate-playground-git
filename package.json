@@ -7,7 +7,7 @@
     "node": "^18.19.1 || ^20.11.1 || >=22.0.0"
   },
   "dependencies": {
-
+    "rollup": "4.50.0"
   },
   "pnpm": {
     "onlyBuiltDependencies": []
