@@ -76,10 +76,10 @@
     // ============================================================================
     // Delay NPM updates to mitigate dependency chain attacks by malicious actors.
     // This rule only affects direct dependencies.
-    {
-      minimumReleaseAge: '1 day',
-      matchDatasources: ['npm'],
-    },
+    // {
+    //   minimumReleaseAge: '1 day',
+    //   matchDatasources: ['npm'],
+    // },
 
     // Group Bazel updates
     {
