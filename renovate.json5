@@ -104,7 +104,6 @@
       followTag: 'next',
       minimumReleaseAge: null,
       separateMajorMinor: false,
-      schedule: ['Every minute, every 2 hours'],
       matchPackageNames: [
         '@angular-devkit/**',
         '@angular/**',
