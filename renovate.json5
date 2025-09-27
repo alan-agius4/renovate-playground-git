@@ -108,8 +108,8 @@
       followTag: "next",
       minimumReleaseAge: null,
       separateMajorMinor: false,
-     // schedule: ["* 0-22/2 * * *"],
-     schedule: ['Every minute','every 2 hours'],
+      // schedule: ["* 0-22/2 * * *"],
+      schedule: ["Every minute", "every 2 hours"],
       matchPackageNames: [
         "@angular-devkit/**",
         "@angular/**",
