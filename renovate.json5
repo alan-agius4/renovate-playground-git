@@ -104,7 +104,7 @@
       followTag: 'next',
       minimumReleaseAge: null,
       separateMajorMinor: false,
-      schedule: ['* 1-23/2 * * *'],
+      schedule: ['* 0-22/2 * * *'],
       matchPackageNames: [
         '@angular-devkit/**',
         '@angular/**',
