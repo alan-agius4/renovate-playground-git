@@ -3,11 +3,11 @@
 module(
     name = "angular-cli",
 )
-bazel_dep(name = "bazel_skylib", version = "1.8.1")
+bazel_dep(name = "bazel_skylib", version = "1.8.2")
 bazel_dep(name = "rules_angular")
 git_override(
     module_name = "rules_angular",
-    commit = "17eac47ea99057f7473a7d93292e76327c894ed9",
+    commit = "2c348bf59a38d044f4d389290d597d94c0699607",
     remote = "https://github.com/devversion/rules_angular.git",
 )
 
