@@ -28,7 +28,7 @@
   },
 
   // Feature disabled: permission to enable vulnerability alerts is not granted
-  osvVulnerabilityAlerts: false,
+  osvVulnerabilityAlerts: true,
   vulnerabilityAlerts: {
     enabled: false,
   },
