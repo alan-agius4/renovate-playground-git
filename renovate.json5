@@ -30,7 +30,7 @@
   // Feature disabled: permission to enable vulnerability alerts is not granted
   osvVulnerabilityAlerts: true,
   vulnerabilityAlerts: {
-    enabled: false,
+    enabled: true,
   },
 
   // Ignored dependencies in all repositories
