@@ -6,14 +6,11 @@
   automerge: false,
 
   // Schedule Renovate to run during off-peak hours
-  schedule: [
-    'after 10:00pm on Monday, Wednesday, Friday',
-    'before 5:00am on Monday, Wednesday, Friday',
-  ],
+  schedule: ['between 6:00am and 12:00pm on Monday, Wednesday, Friday'],
 
   prConcurrentLimit: 8,
   prHourlyLimit: 4,
-  timezone: 'America/Tijuana',
+  timezone: 'Europe/Rome',
 
   // Commit and PR customization
   commitBody: 'See associated pull request for more information.',
