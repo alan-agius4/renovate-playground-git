@@ -7,8 +7,8 @@
 
   // Schedule Renovate to run during off-peak hours
   schedule: [
-    'after 6:00am on Monday, Wednesday, Friday',
-    'before 10:00pm on Monday, Wednesday, Friday',
+    'after 6am on Monday, Wednesday, Friday',
+    'before 10pm on Monday, Wednesday, Friday',
   ],
 
   prConcurrentLimit: 8,
@@ -24,6 +24,7 @@
 
   lockFileMaintenance: {
     enabled: true,
+    "schedule": ["before 4am on Tuesday"],
   },
 
   // Feature disabled: permission to enable vulnerability alerts is not granted
