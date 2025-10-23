@@ -6,7 +6,10 @@
   automerge: false,
 
   // Schedule Renovate to run during off-peak hours
-  schedule: ['between 6:00am and 12:00pm on Monday, Wednesday, Friday'],
+  schedule: [
+    'after 6:00am on Monday, Wednesday, Friday',
+    'before 10:00pm on Monday, Wednesday, Friday',
+  ],
 
   prConcurrentLimit: 8,
   prHourlyLimit: 4,
