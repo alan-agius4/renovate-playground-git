@@ -21,7 +21,7 @@
 
   lockFileMaintenance: {
     enabled: true,
-    schedule: ['after 5am and on before 7am Tuesday'],
+    schedule: ['after 5am and before 7am Tuesday'],
   },
 
   // Feature disabled: permission to enable vulnerability alerts is not granted
