@@ -30,7 +30,7 @@ jobs:
       # checkout the repo to be able to run the action we have created.  Other repos will skip
       # this step.
       - uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
-      - uses: angular/dev-infra/github-actions/npm/checkout-and-setup-node@b5a3609f89c06eb4037dce22a93641213a5d1508
+      - uses: angular/dev-infra/github-actions/npm/checkout-and-setup-node@2b0a3018401da50c0b34a4dedde2a6fdb9e90394
       - name: corepack
         run: |
           npm install corepack -g
