@@ -10,7 +10,7 @@
 
   prConcurrentLimit: 8,
   prHourlyLimit: 4,
-  timezone: 'Europe/Rome',
+  timezone: 'Etc/UTC',
 
   // Commit and PR customization
   commitBody: 'See associated pull request for more information.',
