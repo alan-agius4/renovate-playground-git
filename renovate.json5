@@ -40,7 +40,7 @@
     // GENERAL GROUPING & UPDATE BEHAVIOR
     // ============================================================================
     {
-      matchManagers: ['npm', 'node'],
+      matchManagers: ['npm', 'nvm'],
       matchDepNames: ['pnpm', 'typescript', 'node'],
       postUpgradeTasks: {
        commands: [
@@ -53,7 +53,7 @@
     // Renovate does not update Bazel lockfile for the time being.
     // Workaround for https://github.com/renovatebot/renovate/issues/25557
     {
-      matchManagers: ["bazel", "bazel-module", "bazelisk", "npm", "node"],
+      matchManagers: ["bazel", "bazel-module", "bazelisk", "npm", "nvm"],
       postUpgradeTasks: {
         executionMode: "branch",
         commands: [
