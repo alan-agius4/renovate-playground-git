@@ -54,7 +54,7 @@
     // Workaround for https://github.com/renovatebot/renovate/issues/25557
     {
       postUpgradeTasks: {
-        matchManagers: ["bazel", "bazel-module", "bazelisk", "npm"],
+        matchManagers: ["bazel", "bazel-module", "bazelisk", "npm", "node"],
         executionMode: "branch",
         commands: [
           "echo 'Hello, world' >> file.txt", // In case `.npmrc` avoid a hard error.
