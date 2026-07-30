@@ -146,7 +146,7 @@
 
     {
       followTag: null,
-      matchDepNames: ['angular/**'],
+      matchDepNames: ['angular/dev-infra'],
     },
 
     // Disable 'next' tag tracking on non-main branches
