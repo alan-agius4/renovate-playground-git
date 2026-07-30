@@ -136,13 +136,7 @@
       ],
     },
 
-    // Follow the main branch digest
-    {
-      matchManagers: ['github-actions'],
-      matchPackageNames: ['angular/dev-infra'],
-      pinDigests: true,
-      followTag: 'main',
-    },
+  
 
     // @angular/benchpress is not released as 'next'
     {
