@@ -81,7 +81,7 @@
 
     // Group all non-major dependencies together for updates.
     {
-      groupName: 'all non-major dependencies',
+      groupName: 'allf non-major dependencies',
       matchDepNames: ['!node', '!pnpm', '!npm', '!yarn'],
       matchUpdateTypes: ['digest', 'patch', 'minor'],
       matchManagers: ['npm'],
@@ -142,6 +142,11 @@
     {
       followTag: null,
       matchDepNames: ['@angular/benchpress'],
+    },
+
+    {
+      followTag: null,
+      matchDepNames: ['angular/**'],
     },
 
     // Disable 'next' tag tracking on non-main branches
