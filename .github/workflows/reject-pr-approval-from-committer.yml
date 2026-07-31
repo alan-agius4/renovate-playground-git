@@ -1,4 +1,4 @@
-name: Reject PR approval from committer
+name: Dismiss PR approval from committer
 
 on:
   pull_request_review:
@@ -12,11 +12,12 @@ permissions:
   pull-requests: write
 
 jobs:
-  preventapprove:
-    name: Reject PR approval by committers to the PR
+  dismiss_approve:
+    name: "Dismiss PR approval by committers"
     runs-on: ubuntu-latest
     steps:
       - name: Dismiss code reviews from committers
+        if: github.event_name == 'pull_request' || github.event.review.state == 'approved'
         uses: peckjon/reject-pr-approval-from-committer@1962a415b3c12f1ebe0104c9531ab577e5b0e3a9 # master
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
